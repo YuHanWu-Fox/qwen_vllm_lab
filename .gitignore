@@ -1,0 +1,12 @@
+.worktrees/
+.venv/
+.venvs/
+__pycache__/
+*.py[cod]
+.cache/
+models/
+logs/
+results/raw/
+.env
+.env.*
+!.env.example
