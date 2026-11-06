@@ -1,0 +1,4 @@
+[submodule "vllm-v0.31"]
+	path = vllm-v0.31
+	url = https://github.com/YuHanWu-Fox/vllm.git
+	branch = project/v0.31
