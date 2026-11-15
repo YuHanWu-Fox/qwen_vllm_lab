@@ -1,0 +1,4 @@
+{
+    "cmake.sourceDirectory": "${workspaceFolder}/vllm-v0.33",
+    "python.defaultInterpreterPath": "${workspaceFolder}/vllm-v0.33/.venv/bin/python"
+}

@@ -1,0 +1,47 @@
+[project]
+name = "qwen-vllm-lab"
+version = "0.1.0"
+description = "Reproducible environments for Qwen experiments with vLLM"
+requires-python = "==3.12.*"
+dependencies = [
+    "vllm==0.33.0",
+    # Direct declarations make the CUDA index apply to these packages.
+    "torch==2.14.0",
+    "torchvision==0.29.0",
+    "torchaudio==2.11.0",
+    "torchcodec>=0.14",
+    "httpx[socks]>=0.28.1",
+    "requests[socks]>=2.33.0",
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.5.1",
+    "pytest>=9",
+    # Install vLLM editable without an unlocked, isolated build environment.
+    "cmake>=3.26.1",
+    "ninja",
+    "packaging>=24.2",
+    "setuptools>=78.1.1,<81",
+    "setuptools-scm>=8",
+    "setuptools-rust>=1.9",
+    "wheel",
+    "jinja2>=3.1.6",
+    "build",
+]
+
+[tool.uv]
+package = false
+required-version = ">=0.11.3"
+environments = ["sys_platform == 'linux' and platform_machine == 'x86_64'"]
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu130" }
+torchvision = { index = "pytorch-cu130" }
+torchaudio = { index = "pytorch-cu130" }
+torchcodec = { index = "pytorch-cu130" }
