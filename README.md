@@ -2,19 +2,19 @@
 
 使用 Qwen 模型验证 vLLM 优化。
 
-- 开发源码：vllm-v0.33 子模块
-- 开发分支：project/v0.33
-- 基线分支：baseline/v0.33
+- 外层实验分支：AG_RS_DBO_Lab
+- 开发源码：vllm-v0.33 子模块（保留现有目录名）
+- 开发分支：AG_RS_DBO_Lab
+- 基线分支：baseline/v0.34
 - 基线提交：configs/baseline.commit
 - 基线工作区：.worktrees/vllm-baseline
 - 两个工作区分别使用自己的 .venv
 
-当前源码基于官方 `v0.33.0`（`4ba787ec9959e566d3b587a796dff07673324da5`）。
-开发目录、子模块名称和编辑器配置统一使用 `vllm-v0.33`。
-
-官方 v0.33 已包含原补丁 `8d02c91f2d` 的 INC/PLE 排除逻辑和回归测试。
-新分支通过合并保留原补丁的提交历史，源码使用官方 v0.33 实现，包括更新后的默认回退行为。
-原 `project/v0.31`、`baseline/v0.31` 和 `study/v0.31` 分支继续保留。
+当前源码基于官方 `v0.34.0`（`62d4bc3c7e33b1b6c906e233e6af2d3506c482ca`）。
+开发分支通过合并保留已有实验历史，升级后的源码树与官方标签一致；
+`baseline/v0.34` 直接指向该官方提交。CUDA AG_RS 的 DBO 支持尚未加入。
+开发目录、子模块名称和编辑器路径仍使用 `vllm-v0.33`，避免改变现有工作区路径。
+原 `project/v0.33`、`baseline/v0.33` 及更早的实验分支继续保留。
 
 切换 Git 分支不会更新 `.venv` 中的依赖或编译扩展，使用下文的同步脚本更新环境。
 `configs/precompiled.commit` 记录匹配的官方源码提交；依赖统一由外层 `uv.lock` 管理。
@@ -27,7 +27,7 @@
 宿主机的 NVIDIA 驱动、CUDA 开发工具链及模型权重不由 `uv.lock` 安装或管理。
 
 两套环境使用同一份第三方依赖，并分别 editable 安装各自的 vLLM 源码。
-`uv.lock` 中的 `vllm==0.33.0` 提供官方依赖元数据和匹配的编译组件信息；实际运行的
+`uv.lock` 中的 `vllm==0.34.0` 提供官方依赖元数据和匹配的编译组件信息；实际运行的
 源码版本由子模块指针及 `configs/baseline.commit` 固定，本地安装版本可以带有 dev 后缀。
 安装脚本跳过发行版 vLLM 包，从锁文件选择并校验官方 wheel，再用本地源码替换为 editable 安装。
 vLLM 的构建工具也包含在锁文件中，editable 安装使用 `--no-deps --no-build-isolation`，
@@ -43,20 +43,20 @@ vLLM 的构建工具也包含在锁文件中，editable 安装使用 `--no-deps 
 
 ```bash
 cd /root/autodl-tmp
-git clone --recurse-submodules https://github.com/YuHanWu-Fox/qwen_vllm_lab.git
+git clone --branch AG_RS_DBO_Lab --recurse-submodules https://github.com/YuHanWu-Fox/qwen_vllm_lab.git
 cd qwen_vllm_lab
 
 # 保留外层仓库固定的源码提交，再关联远端分支。
-git -C vllm-v0.33 switch -c project/v0.33
-git -C vllm-v0.33 branch --set-upstream-to=origin/project/v0.33
+git -C vllm-v0.33 switch -c AG_RS_DBO_Lab
+git -C vllm-v0.33 branch --set-upstream-to=origin/AG_RS_DBO_Lab
 
 git -C vllm-v0.33 remote add upstream https://github.com/vllm-project/vllm.git
-git -C vllm-v0.33 fetch --no-tags upstream tag v0.33.0
+git -C vllm-v0.33 fetch --no-tags upstream tag v0.34.0
 
 mkdir -p .worktrees
-git -C vllm-v0.33 worktree add -b baseline/v0.33 \
+git -C vllm-v0.33 worktree add -b baseline/v0.34 \
   ../.worktrees/vllm-baseline "$(cat configs/baseline.commit)"
-git -C .worktrees/vllm-baseline branch --set-upstream-to=origin/baseline/v0.33
+git -C .worktrees/vllm-baseline branch --set-upstream-to=origin/baseline/v0.34
 
 # 先查看计划，再安装。下载和安装可能需要较多磁盘空间及时间。
 uv run --no-project --python 3.12.13 scripts/sync_envs.py all --dry-run
@@ -86,6 +86,10 @@ uv lock --upgrade
 
 `run_qwen.py` 的模型路径目前是 `~/vllm-projects/models/Qwen3-0.6B`，
 服务器运行前需要准备模型并调整为实际路径。
+
+v0.34 只使用 Model Runner V2；现有 `VLLM_USE_V2_MODEL_RUNNER=1` 可保留，不能设为 `0`。
+性能实验需显式固定 KV cache、block size、显存预算和 NUMA 绑定设置，
+在同一源码提交和环境下比较 DBO 开关，避免把版本默认值变化计入 DBO 收益。
 
 单独执行普通 `uv sync` 或 `uv run` 会使用外层默认环境和发行版 vLLM，
 进行源码实验时使用上面的同步脚本和明确的解释器路径。

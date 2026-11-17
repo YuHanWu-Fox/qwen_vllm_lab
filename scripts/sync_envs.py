@@ -14,8 +14,8 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
-SUPPORTED_VLLM = "0.33.0"
-SUPPORTED_COMMIT = "4ba787ec9959e566d3b587a796dff07673324da5"
+SUPPORTED_VLLM = "0.34.0"
+SUPPORTED_COMMIT = "62d4bc3c7e33b1b6c906e233e6af2d3506c482ca"
 BINARY_PATHS = (
     "csrc",
     "cmake",
