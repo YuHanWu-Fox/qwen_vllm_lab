@@ -1,0 +1,66 @@
+{
+  "config": "max concurrency 32; 32 warmups + 64 requests; DBO on; sync check error",
+  "rank_counts": {
+    "0": [
+      {
+        "stage": "prefill_or_mixed",
+        "graph": "NONE",
+        "microbatches": 1,
+        "steps": 7
+      },
+      {
+        "stage": "prefill_or_mixed",
+        "graph": "NONE",
+        "microbatches": 2,
+        "steps": 13
+      },
+      {
+        "stage": "pure_decode",
+        "graph": "FULL",
+        "microbatches": 1,
+        "steps": 18
+      },
+      {
+        "stage": "pure_decode",
+        "graph": "NONE",
+        "microbatches": 1,
+        "steps": 3
+      }
+    ],
+    "1": [
+      {
+        "stage": "prefill_or_mixed",
+        "graph": "NONE",
+        "microbatches": 1,
+        "steps": 5
+      },
+      {
+        "stage": "prefill_or_mixed",
+        "graph": "NONE",
+        "microbatches": 2,
+        "steps": 13
+      },
+      {
+        "stage": "pure_decode",
+        "graph": "FULL",
+        "microbatches": 1,
+        "steps": 19
+      },
+      {
+        "stage": "pure_decode",
+        "graph": "NONE",
+        "microbatches": 1,
+        "steps": 3
+      }
+    ]
+  },
+  "nccl_transport_examples": [
+    "autodl-container-0ed04896a6-5a55bc19:160160:160160 [0] NCCL INFO Channel 00 : 0[0] -> 1[1] via SHM/direct",
+    "autodl-container-0ed04896a6-5a55bc19:160160:160160 [0] NCCL INFO Channel 01 : 0[0] -> 1[1] via SHM/direct",
+    "autodl-container-0ed04896a6-5a55bc19:160163:160163 [1] NCCL INFO Channel 00 : 1[1] -> 0[0] via SHM/direct",
+    "autodl-container-0ed04896a6-5a55bc19:160163:160163 [1] NCCL INFO Channel 01 : 1[1] -> 0[0] via SHM/direct",
+    "autodl-container-0ed04896a6-5a55bc19:160163:160163 [1] NCCL INFO Channel 00 : 1[1] -> 0[0] via SHM/direct",
+    "autodl-container-0ed04896a6-5a55bc19:160160:160160 [0] NCCL INFO Channel 00 : 0[0] -> 1[1] via SHM/direct",
+    "autodl-container-0ed04896a6-5a55bc19:160160:160160 [0] NCCL INFO Channel 01 : 0[0] -> 1[1] via SHM/direct"
+  ]
+}

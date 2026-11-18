@@ -43,9 +43,8 @@ def print_environment() -> None:
 def main() -> None:
     print_environment()
 
-    model_path = Path(
-        "~/vllm-projects/models/Qwen3-0.6B"
-    ).expanduser()
+    # model_path = Path("~/vllm-projects/models/Qwen3-0.6B").expanduser()
+    model_path = Path("/root/autodl-tmp/models/Qwen3-0.6B").expanduser()
 
     print("模型路径：", model_path, flush=True)
     if not model_path.exists():
