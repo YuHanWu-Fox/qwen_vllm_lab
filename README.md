@@ -1,102 +1,43 @@
-# qwen_vllm_lab
+# vLLM：CUDA AG/RS 的双批次重叠（DBO）
 
-使用 Qwen 模型验证 vLLM 优化。
+为 vLLM Model Runner V2 的 `allgather_reducescatter` 后端实现 CUDA 双批次重叠（DBO），让一组微批的专家通信与另一组微批的专家计算并行。双 RTX 4090 上，DeepSeek-V2-Lite-Chat 在并发 64 的长输入场景中，请求吞吐提高 **6.9%**，P99 首 token 延迟下降 **7.0%**。
 
-- 外层实验分支：AG_RS_DBO_Lab
-- 开发源码：vllm-v0.33 子模块（保留现有目录名）
-- 开发分支：AG_RS_DBO_Lab
-- 基线分支：baseline/v0.34
-- 基线提交：configs/baseline.commit
-- 基线工作区：.worktrees/vllm-baseline
-- 两个工作区分别使用自己的 .venv
+[上游 PR #68535](https://github.com/vllm-project/vllm/pull/68535) · [逐轮测试数据](experiments/agrs_dbo_pr/serving-trials.jsonl) · [实验汇总](experiments/agrs_dbo_pr/serving-summary.json)
 
-当前源码基于官方 `v0.34.0`（`62d4bc3c7e33b1b6c906e233e6af2d3506c482ca`）。
-开发分支通过合并保留已有实验历史，升级后的源码树与官方标签一致；
-`baseline/v0.34` 直接指向该官方提交。CUDA AG_RS 的 DBO 支持尚未加入。
-开发目录、子模块名称和编辑器路径仍使用 `vllm-v0.33`，避免改变现有工作区路径。
-原 `project/v0.33`、`baseline/v0.33` 及更早的实验分支继续保留。
+## 推理服务压测
 
-切换 Git 分支不会更新 `.venv` 中的依赖或编译扩展，使用下文的同步脚本更新环境。
-`configs/precompiled.commit` 记录匹配的官方源码提交；依赖统一由外层 `uv.lock` 管理。
+DeepSeek-V2-Lite-Chat（BF16），两张 RTX 4090，DP2 + 专家并行（EP）、TP1。每个请求输入 2,048 个 token、输出 8 个 token；每个并发和开关组合各测三轮，表中为三轮中位数。两组仅切换 `--enable-dbo`，纯 decode 批次均不拆分。
 
-## 统一的依赖锁定
+| 并发 | 吞吐（请求/秒，关闭 → 开启） | P99 首 token 延迟（ms，关闭 → 开启） |
+| ---: | ---: | ---: |
+| 32 | 14.93 → 15.42（+3.3%） | 2,104 → 1,970（−6.4%） |
+| 64 | 15.97 → 17.07（+6.9%） | 4,022 → 3,739（−7.0%） |
 
-外层 `pyproject.toml` 声明运行依赖和开发、构建工具，`uv.lock` 锁定完整的传递依赖、
-下载来源和文件哈希。`.python-version` 固定 Python 3.12.13。
-当前安装目标为 Linux x86_64、Python 3.12、CUDA 13.0；PyTorch 包使用官方 cu130 索引。
-宿主机的 NVIDIA 驱动、CUDA 开发工具链及模型权重不由 `uv.lock` 安装或管理。
+并发 64 的三轮吞吐均有提升。并发 32 的吞吐波动范围重叠，生成阶段每 token 耗时的中位数增加了 17.5%。这些结果对应长输入、短输出的场景。
 
-两套环境使用同一份第三方依赖，并分别 editable 安装各自的 vLLM 源码。
-`uv.lock` 中的 `vllm==0.34.0` 提供官方依赖元数据和匹配的编译组件信息；实际运行的
-源码版本由子模块指针及 `configs/baseline.commit` 固定，本地安装版本可以带有 dev 后缀。
-安装脚本跳过发行版 vLLM 包，从锁文件选择并校验官方 wheel，再用本地源码替换为 editable 安装。
-vLLM 的构建工具也包含在锁文件中，editable 安装使用 `--no-deps --no-build-isolation`，
-避免重新解析或升级已锁定依赖。
+## Nsight Systems 时间线
 
-不要将两份同名 vLLM 声明为 uv workspace 的两个成员。这里保留两个独立 `.venv`，
-通过下面的脚本指定安装目标。
+每张卡在一个纯 prefill 步里处理 8,192 个 token。关闭 DBO 时，NCCL 和 Triton 专家 GEMM 在同一条流上串行；开启后，GPU 0 和 GPU 1 分别有 **36.8%** 和 **40.4%** 的 NCCL 活跃时间与专家 GEMM 重叠。下图从各自的第一次 AllGather 对齐，显示前 30 ms；百分比按整个 prefill 步计算。
 
-## 新服务器初始化
+![DBO 开关的双卡 GPU 时间线：NCCL AllGather、ReduceScatter 与 Triton 专家 GEMM](experiments/agrs_dbo_pr/figures/prefill-timeline.png)
 
-安装 Git、curl、uv，并确认宿主机驱动支持 CUDA 13.0。如果使用 SSH 网络隧道，
-先配置当前终端的 `ALL_PROXY` 等环境变量。
+<details>
+<summary>展开 Nsight Systems 原图</summary>
 
-```bash
-cd /root/autodl-tmp
-git clone --branch AG_RS_DBO_Lab --recurse-submodules https://github.com/YuHanWu-Fox/qwen_vllm_lab.git
-cd qwen_vllm_lab
+**关闭 DBO（GPU 1）**：AllGather、专家 GEMM 和 ReduceScatter 在流 17 上依次执行。
 
-# 保留外层仓库固定的源码提交，再关联远端分支。
-git -C vllm-v0.33 switch -c AG_RS_DBO_Lab
-git -C vllm-v0.33 branch --set-upstream-to=origin/AG_RS_DBO_Lab
+![关闭 DBO：NCCL 和专家计算使用同一条 CUDA 流](experiments/agrs_dbo_pr/figures/dbo-off.png)
 
-git -C vllm-v0.33 remote add upstream https://github.com/vllm-project/vllm.git
-git -C vllm-v0.33 fetch --no-tags upstream tag v0.34.0
+**开启 DBO（GPU 0）**：流 37 上的 NCCL 内核与流 17 上的专家 GEMM 同时执行。
 
-mkdir -p .worktrees
-git -C vllm-v0.33 worktree add -b baseline/v0.34 \
-  ../.worktrees/vllm-baseline "$(cat configs/baseline.commit)"
-git -C .worktrees/vllm-baseline branch --set-upstream-to=origin/baseline/v0.34
+![开启 DBO：通信流与计算流中的内核有时间交叠](experiments/agrs_dbo_pr/figures/dbo-on.png)
 
-# 先查看计划，再安装。下载和安装可能需要较多磁盘空间及时间。
-uv run --no-project --python 3.12.13 scripts/sync_envs.py all --dry-run
-uv run --no-project --python 3.12.13 scripts/sync_envs.py all
-```
+</details>
 
-以上 Git 初始化命令用于首次 clone，已有分支和 worktree 时无需重复创建。
+## 实现要点
 
-## 日常使用
+沿用 MRV2 的双微批调度，将 MoE dispatch 的 AllGather 和 combine 的 ReduceScatter 放到通信流，专家 GEMM 留在计算流。用 CUDA event 保证通信与计算的依赖顺序，用 `record_stream` 防止跨流使用的显存被过早复用。CUDA Graph 捕获时，通信留在捕获流。
 
-在外层项目根目录执行：
+当前支持单机 DP + EP、TP = 1、模块化 MoE 和标准 NCCL（不启用对称内存）。已通过 130 项回归及双卡 prompt logprob 对比；验证使用的前置修复见上游 PR。
 
-```bash
-# 分别同步，或同时同步。操作会将所选环境更新为锁定依赖。
-uv run --no-project --python 3.12.13 scripts/sync_envs.py project
-uv run --no-project --python 3.12.13 scripts/sync_envs.py baseline
-uv run --no-project --python 3.12.13 scripts/sync_envs.py all
-
-# 使用已同步的环境运行同一个验证脚本。
-vllm-v0.33/.venv/bin/python scripts/run_qwen.py
-.worktrees/vllm-baseline/.venv/bin/python scripts/run_qwen.py
-
-# 检查锁文件；主动升级第三方依赖时再更新锁文件。
-uv lock --check
-uv lock --upgrade
-```
-
-`run_qwen.py` 的模型路径目前是 `~/vllm-projects/models/Qwen3-0.6B`，
-服务器运行前需要准备模型并调整为实际路径。
-
-v0.34 只使用 Model Runner V2；现有 `VLLM_USE_V2_MODEL_RUNNER=1` 可保留，不能设为 `0`。
-性能实验需显式固定 KV cache、block size、显存预算和 NUMA 绑定设置，
-在同一源码提交和环境下比较 DBO 开关，避免把版本默认值变化计入 DBO 收益。
-
-单独执行普通 `uv sync` 或 `uv run` 会使用外层默认环境和发行版 vLLM，
-进行源码实验时使用上面的同步脚本和明确的解释器路径。
-两份源码若修改依赖声明或 C++、CUDA、Rust 构建代码，需要更新锁定方案或重新编译；
-脚本会检查这些文件，阻止混用不匹配的官方 wheel。
-修改源码版本、依赖配置后，将子模块指针、基线记录、`pyproject.toml`、`.python-version`
-和 `uv.lock` 的相应改动提交到外层 Git 仓库。
-
-同步脚本从 `.gitmodules` 的 `submodule.vllm-v0.33.path` 读取开发源码位置。
-今后修改子模块目录名时使用 `git mv`，并重新同步开发环境以更新 editable 路径。
+原 Qwen 实验环境与初始化说明见 [later.md](later.md)。
