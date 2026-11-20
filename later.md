@@ -2,9 +2,9 @@
 
 使用 Qwen 模型验证 vLLM 优化。
 
-- 外层实验分支：AG_RS_DBO_Lab
+- 外层实验分支：GDN_Mamba_DBO
 - 开发源码：vllm-v0.33 子模块（保留现有目录名）
-- 开发分支：AG_RS_DBO_Lab
+- 开发分支：GDN_Mamba_DBO
 - 基线分支：baseline/v0.34
 - 基线提交：configs/baseline.commit
 - 基线工作区：.worktrees/vllm-baseline
@@ -43,12 +43,12 @@ vLLM 的构建工具也包含在锁文件中，editable 安装使用 `--no-deps 
 
 ```bash
 cd /root/autodl-tmp
-git clone --branch AG_RS_DBO_Lab --recurse-submodules https://github.com/YuHanWu-Fox/qwen_vllm_lab.git
+git clone --branch GDN_Mamba_DBO --recurse-submodules https://github.com/YuHanWu-Fox/qwen_vllm_lab.git
 cd qwen_vllm_lab
 
 # 保留外层仓库固定的源码提交，再关联远端分支。
-git -C vllm-v0.33 switch -c AG_RS_DBO_Lab
-git -C vllm-v0.33 branch --set-upstream-to=origin/AG_RS_DBO_Lab
+git -C vllm-v0.33 switch -c GDN_Mamba_DBO
+git -C vllm-v0.33 branch --set-upstream-to=origin/GDN_Mamba_DBO
 
 git -C vllm-v0.33 remote add upstream https://github.com/vllm-project/vllm.git
 git -C vllm-v0.33 fetch --no-tags upstream tag v0.34.0

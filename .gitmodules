@@ -1,4 +1,4 @@
 [submodule "vllm-v0.33"]
 	path = vllm-v0.33
 	url = https://github.com/YuHanWu-Fox/vllm.git
-	branch = AG_RS_DBO_Lab
+	branch = GDN_Mamba_DBO
