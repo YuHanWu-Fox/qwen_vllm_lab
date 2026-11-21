@@ -13,7 +13,7 @@
 | 状态缓存 | `none` 使用 `--no-enable-prefix-caching`。`align` 使用 `--enable-prefix-caching --mamba-cache-mode align`。这类模型开启 prefix caching 时，默认的 `none` 会归一化为 `align`。 |
 | 执行模式 | prefill 和混合负载走 eager。均匀单 token decode 可匹配兼容的 FULL 图。是否切分由全部 rank 的投票及 token 阈值决定。 |
 
-`GDN_Mamba_DBO_agrs` 从功能分支派生，用于 CUDA AG/RS DBO 联调。在双 4090 联调前需接入候选补丁和适用的前置修复。已有的双卡 AG/RS 数据来自 DeepSeek-V2-Lite-Chat。正式 Hybrid DBO 实验使用目标上游分支已支持的 EP 后端。参见[AG/RS 补丁与实验记录](experiments/agrs_dbo_pr/README.md)和[上游 PR #68535](https://github.com/vllm-project/vllm/pull/68535)。
+`GDN_Mamba_DBO_Base` 沿用上游 `v0.34.0` 的 CUDA DBO 通信后端，使用 `--all2all-backend` 选择环境支持的 `deepep_high_throughput`、`deepep_low_latency` 或 `nixl_ep`。CUDA AG/RS 补丁、压测脚本和结果保存在实验分支 `GDN_Mamba_DBO_agrs`。[AG/RS 实验记录](https://github.com/YuHanWu-Fox/qwen_vllm_lab/blob/GDN_Mamba_DBO_agrs/experiments/agrs_dbo_pr/README.md)
 
 ## 整步工作状态与片段 metadata
 
@@ -87,9 +87,9 @@ uv run --offline --no-project --python .venv/bin/python .venv/bin/python -m pyte
 
 | 用途 | 模型与权重 |
 | --- | --- |
-| 双 4090 GDN 联调 | 从原生 `Qwen3NextForCausalLM` 配置缩到 3 层 GDN、1 层 full attention、16 个 routed experts、top-4。保留 `hidden_size=2048`，用 `--load-format dummy` 本地生成 BF16 权重。[原模型配置](https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Instruct/blob/main/config.json) |
+| GDN 联调 | 从原生 `Qwen3NextForCausalLM` 配置缩到 3 层 GDN、1 层 full attention、16 个 routed experts、top-4。保留 `hidden_size=2048`，用 `--load-format dummy` 本地生成 BF16 权重。[原模型配置](https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Instruct/blob/main/config.json) |
 | GDN 实权重 A/B | `Intel/Qwen3-Next-80B-A3B-Instruct-int4-AutoRound`，W4A16，权重文件合计约 40.3 GiB。在大显存机器上确认量化专家 kernel 与 EP 后端的组合。[Intel 模型文件](https://huggingface.co/Intel/Qwen3-Next-80B-A3B-Instruct-int4-AutoRound/tree/main) |
-| Mamba2 实权重 A/B | `ibm-granite/granite-4.0-h-tiny`，BF16，权重文件合计约 12.9 GiB。先在双 4090 用 AG/RS 联调，再用同一 revision 在正式 PR 的上游 EP 后端复测。[IBM 模型卡](https://huggingface.co/ibm-granite/granite-4.0-h-tiny) |
+| Mamba2 实权重 A/B | `ibm-granite/granite-4.0-h-tiny`，BF16，权重文件合计约 12.9 GiB。用同一权重 revision 在上游 EP 后端做正式 A/B。[IBM 模型卡](https://huggingface.co/ibm-granite/granite-4.0-h-tiny) |
 
 以上三套模型的配置已通过本分支 `DP=2、TP=1、EP、DBO` 下 `none` 和 `align` 的检查。双卡通信、真实权重端到端执行和性能仍待测试。A800 的 EP 镜像需要能运行 SM80，当前默认锁定的 DeepEP 提交在 SM80 构建分支会报 `Not implemented`。`deepep_high_throughput` 可作为兼容环境上的 eager 测试后端。验证 FULL replay 时选择支持图捕获的后端。[DeepEP 构建配置](https://github.com/deepseek-ai/DeepEP/blob/a56d6156febcd9976e55adc85b5155bfac9f28f8/setup.py#L130-L139) · [vLLM 图模式配置][ep-cg]
 

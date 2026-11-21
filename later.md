@@ -12,7 +12,7 @@
 
 当前源码基于官方 `v0.34.0`（`62d4bc3c7e33b1b6c906e233e6af2d3506c482ca`）。
 开发分支以合并提交 `9ad52f28fe` 为基线，该提交的源码树与官方标签一致。
-`baseline/v0.34` 直接指向官方提交。CUDA AG/RS 的候选补丁和使用记录见[实验目录](experiments/agrs_dbo_pr/README.md)。
+`baseline/v0.34` 直接指向官方提交。CUDA AG/RS 的候选补丁和使用记录见[实验分支](https://github.com/YuHanWu-Fox/qwen_vllm_lab/blob/GDN_Mamba_DBO_agrs/experiments/agrs_dbo_pr/README.md)。
 开发目录、子模块名称和编辑器路径仍使用 `vllm-v0.33`，避免改变现有工作区路径。
 原 `project/v0.33`、`baseline/v0.33` 及更早的实验分支继续保留。
 
