@@ -2,17 +2,17 @@
 
 使用 Qwen 模型验证 vLLM 优化。
 
-- 外层实验分支：GDN_Mamba_DBO
-- 开发源码：vllm-v0.33 子模块（保留现有目录名）
-- 开发分支：GDN_Mamba_DBO
+- Hybrid DBO 功能分支 `GDN_Mamba_DBO_Base`
+- CUDA AG/RS 实验分支 `GDN_Mamba_DBO_agrs`
+- 开发源码在 `vllm-v0.33` 子模块，外层仓库和子模块使用同名分支
 - 基线分支：baseline/v0.34
 - 基线提交：configs/baseline.commit
 - 基线工作区：.worktrees/vllm-baseline
 - 两个工作区分别使用自己的 .venv
 
 当前源码基于官方 `v0.34.0`（`62d4bc3c7e33b1b6c906e233e6af2d3506c482ca`）。
-开发分支通过合并保留已有实验历史，升级后的源码树与官方标签一致；
-`baseline/v0.34` 直接指向该官方提交。CUDA AG_RS 的 DBO 支持尚未加入。
+开发分支以合并提交 `9ad52f28fe` 为基线，该提交的源码树与官方标签一致。
+`baseline/v0.34` 直接指向官方提交。CUDA AG/RS 的候选补丁和使用记录见[实验目录](experiments/agrs_dbo_pr/README.md)。
 开发目录、子模块名称和编辑器路径仍使用 `vllm-v0.33`，避免改变现有工作区路径。
 原 `project/v0.33`、`baseline/v0.33` 及更早的实验分支继续保留。
 
@@ -40,15 +40,17 @@ vLLM 的构建工具也包含在锁文件中，editable 安装使用 `--no-deps 
 
 安装 Git、curl、uv，并确认宿主机驱动支持 CUDA 13.0。如果使用 SSH 网络隧道，
 先配置当前终端的 `ALL_PROXY` 等环境变量。
+要检出实验分支，将下方 `lab_branch` 设为 `GDN_Mamba_DBO_agrs`。
 
 ```bash
 cd /root/autodl-tmp
-git clone --branch GDN_Mamba_DBO --recurse-submodules https://github.com/YuHanWu-Fox/qwen_vllm_lab.git
+lab_branch=GDN_Mamba_DBO_Base
+git clone --branch "$lab_branch" --recurse-submodules https://github.com/YuHanWu-Fox/qwen_vllm_lab.git
 cd qwen_vllm_lab
 
 # 保留外层仓库固定的源码提交，再关联远端分支。
-git -C vllm-v0.33 switch -c GDN_Mamba_DBO
-git -C vllm-v0.33 branch --set-upstream-to=origin/GDN_Mamba_DBO
+git -C vllm-v0.33 switch -c "$lab_branch"
+git -C vllm-v0.33 branch --set-upstream-to="origin/$lab_branch"
 
 git -C vllm-v0.33 remote add upstream https://github.com/vllm-project/vllm.git
 git -C vllm-v0.33 fetch --no-tags upstream tag v0.34.0
