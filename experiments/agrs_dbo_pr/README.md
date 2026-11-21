@@ -1,5 +1,10 @@
 # CUDA AG/RS DBO: submission candidate and serving validation
 
+The `GDN_Mamba_DBO_agrs` submodule includes the CUDA AG/RS backport for the
+v0.34.0 Hybrid DBO branch. Use the pinned submodule revision for this experiment
+branch. The patch files and serving results below refer to the original
+upstream-main candidate.
+
 The candidate targets vLLM MRV2 on upstream `main` at
 [`3521784d8c98b04d54947edbb3704005e36bfffb`](https://github.com/vllm-project/vllm/commit/3521784d8c98b04d54947edbb3704005e36bfffb)
 (November 18, 2026, 11:05 UTC), in `/root/autodl-tmp/agrs-dbo-pr-candidate`.
@@ -7,8 +12,7 @@ The measured A/B and complete regression used
 [`81a8cb063e6247fe254d7caf7e98a6691d71022a`](https://github.com/vllm-project/vllm/commit/81a8cb063e6247fe254d7caf7e98a6691d71022a)
 in `/root/autodl-tmp/agrs-dbo-submit`. The four upstream commits between the
 two bases did not touch the candidate's files or native build inputs. Both
-patch files apply byte-for-byte on either base. The existing lab v0.34 branch
-and its submodule checkout are unchanged.
+patch files apply byte-for-byte on either base.
 
 Apply the two patches in this order in a clean vLLM worktree:
 

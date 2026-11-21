@@ -2,7 +2,7 @@
 
 在 Model Runner V2 内，将一次调度的 packed batch 切成两个连续 ubatch，允许长 prefill 在请求内部切开。两个 ubatch 在已有的 MoE 通信交接点交错执行，使一个 ubatch 的专家通信有机会被另一个的计算覆盖。跨切点请求的两个片段逐层读写**同一个整步工作状态块**。
 
-`GDN_Mamba_DBO_Base` 分支实现了标准 GDN 和 Mamba2 的 `none`、`align` 路径，以及 eager 和兼容的单 token decode FULL CUDA Graph。实现基于子模块提交 `9ad52f28fe`，其源码树与 vLLM `v0.34.0` 一致，开发目录沿用 `vllm-v0.33/`。安装与基线工作区见[环境与初始化](later.md)。
+`GDN_Mamba_DBO_agrs` 在 `GDN_Mamba_DBO_Base` 的 GDN/Mamba2 实现上接入 CUDA AG/RS DBO，保留 `none`、`align`、eager 和兼容的单 token decode FULL CUDA Graph。实现基于子模块提交 `9ad52f28fe`，其源码树与 vLLM `v0.34.0` 一致，开发目录沿用 `vllm-v0.33/`。安装与基线工作区见[环境与初始化](later.md)。
 
 ## 运行条件
 
@@ -13,7 +13,17 @@
 | 状态缓存 | `none` 使用 `--no-enable-prefix-caching`。`align` 使用 `--enable-prefix-caching --mamba-cache-mode align`。这类模型开启 prefix caching 时，默认的 `none` 会归一化为 `align`。 |
 | 执行模式 | prefill 和混合负载走 eager。均匀单 token decode 可匹配兼容的 FULL 图。是否切分由全部 rank 的投票及 token 阈值决定。 |
 
-`GDN_Mamba_DBO_agrs` 从功能分支派生，用于 CUDA AG/RS DBO 联调。在双 4090 联调前需接入候选补丁和适用的前置修复。已有的双卡 AG/RS 数据来自 DeepSeek-V2-Lite-Chat。正式 Hybrid DBO 实验使用目标上游分支已支持的 EP 后端。参见[AG/RS 补丁与实验记录](experiments/agrs_dbo_pr/README.md)和[上游 PR #68535](https://github.com/vllm-project/vllm/pull/68535)。
+本分支的子模块提交已包含 CUDA AG/RS DBO 和相应的 workspace、padding 修复。CUDA AG/RS DBO 使用单机 DP+EP、TP=1、modular MoE kernel 和标准 NCCL。以下以双卡 BF16 Granite 的 eager 联调为例。
+
+```bash
+VLLM_USE_NCCL_SYMM_MEM=0 vllm serve ibm-granite/granite-4.0-h-tiny \
+  --dtype bfloat16 --data-parallel-size 2 --tensor-parallel-size 1 \
+  --enable-expert-parallel --all2all-backend allgather_reducescatter \
+  --moe-backend triton --enable-dbo --no-async-scheduling \
+  --no-enable-prefix-caching --enforce-eager --max-model-len 4096
+```
+
+测量 `align` 时改用 `--enable-prefix-caching --mamba-cache-mode align`。已有双卡曲线来自独立候选版的 DeepSeek-V2-Lite-Chat。正式 Hybrid DBO PR 在 `GDN_Mamba_DBO_Base` 上使用目标上游支持的 EP 后端。[AG/RS 补丁与实验记录](experiments/agrs_dbo_pr/README.md) · [上游 PR #68535](https://github.com/vllm-project/vllm/pull/68535)
 
 ## 整步工作状态与片段 metadata
 
@@ -57,7 +67,7 @@ flowchart LR
 
 `dispatch_cg_and_sync_dp()` 使用全 rank 投票、最小 rank 的 token 阈值和按最大 token 数 padding。默认阈值是纯 decode 32 token、含 prefill 的步 512 token。各 rank 对齐 token 切片尺寸和 collective 顺序。[DP 协议][dp]
 
-- **Eager 的全 padding 片段。** `create_ubatch_slices()` 返回空请求切片。Runner 复用一行、一 token 的 dummy decode 来构建 attention metadata，所有表项使用 `NULL_BLOCK_ID`。实际模型仍使用原 token 切片、padding mask 和全为 `PAD_SLOT_ID` 的 slot mapping 参加 EP collective。该片段没有真实请求状态可更新。
+- **Eager 的全 padding 片段。** `create_ubatch_slices()` 返回空请求切片。普通 attention 跳过 metadata 构建。对 Hybrid，Runner 复用一行、一 token 的 dummy decode，所有表项使用 `NULL_BLOCK_ID`，slot mapping 全为 `PAD_SLOT_ID`。两种路径都用原 token 切片和 padding mask 参加 EP collective。
 - **FULL 的全 padding 片段。** 均匀 decode 按捕获时的 padded 请求数固定切片。假设命中 64 token 的图且本 rank 有 32 个真实请求，A 的请求切片是 `[0:32]`，B 是 `[32:64]`。B 使用预留的 padding 行和 null 状态块。原有 `2 * min_tokens < graph_num_tokens` 时回到 eager 的条件仍生效，等号情形可以匹配 FULL。
 - **捕获与 replay。** `ModelCudaGraphManager.capture()` 用 dummy 输入经 `UBatchRunner.prepare()` 构建两片 metadata 和捕获上下文。Replay 前再次执行 `prepare()`，原地更新片段的 query offsets、sequence lengths 和 builder 的图缓冲，然后重放已捕获的图。运行时因整 rank 无真实请求而走的 dummy step 会投票整步执行。这条规则与图捕获使用的 dummy 输入独立。[图捕获入口][capture]
 
@@ -73,16 +83,21 @@ Mamba2 可再按局部 offset 生成 SSD chunk 边界。对 FlashInfer GDN，可
 
 ## 验证与模型选择
 
-本地 RTX 3060 Laptop GPU 上运行下列命令，**342 项测试通过**。回归用真实 GDN 和 Mamba2 kernel，对比整步与两片的有效输出及 conv/SSM 缓存，覆盖 `none`、`align`、混合 prefill/decode、单 token 尾段、eager 全 padding 片段，以及同一 FULL 图在 B 全部有效、部分 padding 和全 padding 时的 replay。测试模型用 `dbo_yield()` 模拟 MoE 交接，DP 投票回归使用模拟的 all-reduce 结果。缓存和 metadata 测试也覆盖了内部 checkpoint 的预留查询及片段规划开关。
+合入 CUDA AG/RS 后在本地 RTX 3060 Laptop GPU 上运行下列回归，**399 项通过**。双卡 NCCL 用例因 GPU 数量不足跳过。状态接续回归用真实 GDN 和 Mamba2 kernel，覆盖 `none`、`align`、混合 prefill/decode、eager 全 padding 和 FULL replay。该回归用 `dbo_yield()` 模拟 MoE 交接。CUDA 下两种缓存模式的 AG/RS DBO 配置检查均通过。
 
 在子模块目录下运行以下回归。
 
 ```bash
-uv run --offline --no-project --python .venv/bin/python .venv/bin/python -m pytest -q \
+VLLM_GPU_SYNC_CHECK=error uv run --offline --no-project --python .venv/bin/python \
+  .venv/bin/python -m pytest -q \
+  tests/kernels/moe/test_naive_dp_ep_dbo.py \
   tests/v1/worker/test_gpu_ubatch_slicing.py \
+  tests/v1/worker/test_workspace.py \
+  tests/v1/worker/test_gpu_model_runner_v2.py \
   tests/v1/attention/test_gdn_metadata_builder.py \
   tests/v1/attention/test_mamba_metadata_builder.py \
-  tests/v1/core/prefix_cache/test_partial_prefix_cache_hits.py
+  tests/v1/core/prefix_cache/test_partial_prefix_cache_hits.py \
+  tests/v1/distributed/test_dbo.py::test_dbo_cuda_ag_rs_prompt_logprobs
 ```
 
 | 用途 | 模型与权重 |
