@@ -1,0 +1,69 @@
+Hybrid DBO performance on dual H100 NVLink
+
+Source environments
+The qwen_vllm_lab checkout is GDN_Mamba_DBO_Base at 065e269b793e.
+The vLLM submodule is GDN_Mamba_DBO_Base at 214be07d6cb8.
+All arms use two H100 80GB HBM3 GPUs with NV6, DP=2, EP enabled, TP=1,
+synchronous scheduling, and the external launcher. Each complete A/B pair
+uses the same engine arguments other than enable_dbo. Per-arm command.txt
+contains the launcher arguments, environment.txt contains selected environment
+settings, and gpu.csv records sampled GPU clocks, memory and utilization.
+
+Workloads
+The models use local real weights. Prompts use reproducible integer tokens
+with independent ranks and matching samples across both arms. The batches
+use greedy sampling with fixed output lengths and skip prefix cache reads.
+The large prefill suite uses the 8192-token prefill threshold. The regular
+suites use the 512-token prefill threshold and the 32-token decode threshold.
+The original Granite HT runs and the reverse-order repeat use six warmups and
+sixteen measured repetitions. Regular trials use three warmups and eight
+measured repetitions except the Granite LL none pair, which uses six and
+sixteen. The large NIXL suite also uses three warmups and eight
+measured repetitions. Counts appear in case-results.csv.
+
+Measurement
+The harness measures offline LLMEngine.step() using the two ranks on the same
+host. It submits the initial requests before starting the clock and places
+a GPU sync and CPU barrier before the timed region. The first-token times
+include scheduler and engine processing. Engine timings exclude HTTP and
+tokenization. The batch all-first latency ends when both ranks have delivered
+the first token for every initial request. Each mixed workload inserts waves
+at fixed engine step indices. Mixed wave TTFT starts at the local wave
+submission. P50/P95 TTFT and TPOT are across requests and repetitions.
+TPOT is elapsed time between the first and last tokens divided by the number
+of token intervals for each request. Large-prefill prompt throughput uses
+both ranks' prompt tokens and batch all-first latency. Decode output
+throughput excludes the first token of each request and divides by the
+interval from the earliest first token to the latest completed output.
+Mixed output throughput includes all generated tokens over the timed window.
+
+After the timed repetitions, the harness runs a separate untimed request
+sequence for each workload and records actual per-rank token sizes, padded
+sizes, microbatch counts, FULL replay and checkpoint signals. Pooled
+measurements in the summary exclude that pass. Each row in summary.json
+includes the untimed step signatures. A queued larger decode workload can have
+more than one cohort, which can be reviewed in these signatures. The summary
+validates both ranks, total token counts and the symmetry of the A/B options.
+
+Capacity records
+backend-buffers.txt is from the size hint APIs exported by the installed
+DeepEP LL and NIXL EP runtimes. The estimate covers one communication buffer
+per rank. The Qwen LL 4096-token trial stopped in the DeepEP buffer index
+assertion during startup. At a 2048-token budget, a four-by-256 prefill with
+DBO enabled exhausted GPU memory during DeepEP LL dispatch after FULL graph
+capture. Both failures have per-rank stack traces in arms/*/run.log.
+The shared Qwen A/B budget was then reduced to 1536 tokens per rank.
+The DeepEP HT 256-local-expert Qwen geometry already stopped at the intranode
+notification assertion in the prior transport probe.
+For Granite NIXL, the off arm completed all workloads at a 32786-token budget.
+The on arm ran out of memory in the first 8192-token workload when allocating
+a 10.01 GiB fused-MoE workspace for the second microbatch. The matrix retries
+both arms at a common lower budget. The largest completed budget is recorded
+in summary.json and case-results.csv.
+
+Data layout
+case-results.csv contains latency, throughput, step counts and percentage
+deltas. summary.json also records runtime versions and the step signatures.
+Each measured rank's raw results are in arms/*/rank0.json or rank1.json.
+matrix.log records arm status and arguments. Failed and incomplete arms are
+retained with their logs and are skipped by summarize.py when pairing results.

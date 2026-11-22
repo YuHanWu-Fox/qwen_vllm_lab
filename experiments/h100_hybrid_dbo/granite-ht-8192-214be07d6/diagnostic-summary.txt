@@ -1,0 +1,55 @@
+align-off
+  prefill_16x256     TTFT_P50=105.02 ms ubatches=1 checkpoint=False
+  prefill_32x256     TTFT_P50=146.11 ms ubatches=1 checkpoint=False
+  prefill_1x8192     TTFT_P50=142.50 ms ubatches=1 checkpoint=False
+  prefill_128x256    TTFT_P50=532.68 ms ubatches=1 checkpoint=False
+  trace step_ms=147.8 gpu_busy_ms=127.5 gpu_idle_ms=20.2 gpu_idle_before_host_launch_ms=12.1 gpu_compute_comm_overlap_ms=0.0
+  kernel_groups other: 1040 calls / 34.7 ms; mamba: 216 calls / 10.5 ms; deep_ep_layout: 40 calls / 1.8 ms; deep_ep_notify: 80 calls / 6.0 ms; deep_ep_dispatch: 40 calls / 18.1 ms; moe_gemm: 80 calls / 20.9 ms; deep_ep_combine: 40 calls / 34.4 ms
+  nvtx DeepEP/layout: 40 calls / 2.6 ms; DeepEP/dispatch: 40 calls / 16.0 ms; DeepEP/combine: 40 calls / 4.2 ms
+align-on
+  prefill_16x256     TTFT_P50=101.46 ms ubatches=1 checkpoint=False
+  prefill_32x256     TTFT_P50=409.77 ms ubatches=2 checkpoint=False
+  prefill_1x8192     TTFT_P50=143.24 ms ubatches=1 checkpoint=True
+  prefill_128x256    TTFT_P50=442.92 ms ubatches=2 checkpoint=False
+  trace step_ms=448.6 gpu_busy_ms=142.1 gpu_idle_ms=293.8 gpu_idle_before_host_launch_ms=240.9 gpu_compute_comm_overlap_ms=3.2
+  kernel_groups other: 2095 calls / 37.2 ms; mamba: 432 calls / 11.2 ms; deep_ep_layout: 80 calls / 1.9 ms; deep_ep_notify: 160 calls / 14.7 ms; deep_ep_dispatch: 80 calls / 19.4 ms; moe_gemm: 160 calls / 22.8 ms; deep_ep_combine: 80 calls / 35.4 ms
+  nvtx DBO/cpu_yield: 240 calls / 429.2 ms; DeepEP/layout: 80 calls / 8.5 ms; DeepEP/dispatch: 80 calls / 21.6 ms; DeepEP/combine: 80 calls / 8.9 ms
+align-serial
+  prefill_16x256     TTFT_P50=102.06 ms ubatches=1 checkpoint=False
+  prefill_32x256     TTFT_P50=211.62 ms ubatches=2 checkpoint=False
+  prefill_1x8192     TTFT_P50=139.17 ms ubatches=1 checkpoint=True
+  prefill_128x256    TTFT_P50=542.11 ms ubatches=2 checkpoint=False
+  trace step_ms=263.3 gpu_busy_ms=130.1 gpu_idle_ms=132.9 gpu_idle_before_host_launch_ms=105.5 gpu_compute_comm_overlap_ms=0.0
+  kernel_groups other: 2095 calls / 35.3 ms; mamba: 432 calls / 11.2 ms; deep_ep_layout: 80 calls / 1.9 ms; deep_ep_notify: 160 calls / 8.6 ms; deep_ep_dispatch: 80 calls / 18.6 ms; moe_gemm: 160 calls / 22.8 ms; deep_ep_combine: 80 calls / 30.8 ms
+  nvtx DeepEP/layout: 80 calls / 5.1 ms; DeepEP/dispatch: 80 calls / 10.8 ms; DeepEP/combine: 80 calls / 6.2 ms
+none-off
+  prefill_16x256     TTFT_P50=100.71 ms ubatches=1 checkpoint=False
+  prefill_32x256     TTFT_P50=132.20 ms ubatches=1 checkpoint=False
+  prefill_128x256    TTFT_P50=486.69 ms ubatches=1 checkpoint=False
+  trace step_ms=134.5 gpu_busy_ms=117.2 gpu_idle_ms=17.2 gpu_idle_before_host_launch_ms=10.3 gpu_compute_comm_overlap_ms=-0.0
+  kernel_groups other: 996 calls / 34.6 ms; mamba: 216 calls / 10.5 ms; deep_ep_layout: 40 calls / 1.8 ms; deep_ep_notify: 80 calls / 6.2 ms; deep_ep_dispatch: 40 calls / 17.8 ms; moe_gemm: 80 calls / 20.9 ms; deep_ep_combine: 40 calls / 23.5 ms
+  nvtx DeepEP/layout: 40 calls / 2.6 ms; DeepEP/dispatch: 40 calls / 9.7 ms; DeepEP/combine: 40 calls / 4.0 ms
+none-on
+  prefill_16x256     TTFT_P50=103.01 ms ubatches=1 checkpoint=False
+  prefill_32x256     TTFT_P50=404.14 ms ubatches=2 checkpoint=False
+  prefill_128x256    TTFT_P50=406.15 ms ubatches=2 checkpoint=False
+  trace step_ms=373.6 gpu_busy_ms=146.4 gpu_idle_ms=243.1 gpu_idle_before_host_launch_ms=201.5 gpu_compute_comm_overlap_ms=7.4
+  kernel_groups other: 1947 calls / 38.8 ms; mamba: 432 calls / 11.2 ms; deep_ep_layout: 80 calls / 1.9 ms; deep_ep_notify: 160 calls / 23.1 ms; deep_ep_dispatch: 80 calls / 19.0 ms; moe_gemm: 160 calls / 22.9 ms; deep_ep_combine: 80 calls / 35.1 ms
+  nvtx DBO/cpu_yield: 240 calls / 359.6 ms; DeepEP/layout: 80 calls / 7.6 ms; DeepEP/dispatch: 80 calls / 28.4 ms; DeepEP/combine: 80 calls / 8.0 ms
+none-on-pinned
+  prefill_32x256     TTFT_P50=374.21 ms ubatches=2 checkpoint=False
+  trace step_ms=384.0 gpu_busy_ms=128.6 gpu_idle_ms=241.7 gpu_idle_before_host_launch_ms=202.6 gpu_compute_comm_overlap_ms=1.1
+  kernel_groups other: 1947 calls / 35.7 ms; mamba: 432 calls / 11.2 ms; deep_ep_layout: 80 calls / 1.9 ms; deep_ep_notify: 160 calls / 21.9 ms; deep_ep_dispatch: 80 calls / 18.5 ms; moe_gemm: 160 calls / 22.8 ms; deep_ep_combine: 80 calls / 16.7 ms
+  nvtx DBO/cpu_yield: 240 calls / 370.3 ms; DeepEP/layout: 80 calls / 7.1 ms; DeepEP/dispatch: 80 calls / 24.5 ms; DeepEP/combine: 80 calls / 7.4 ms
+none-on-short-gil
+  prefill_32x256     TTFT_P50=414.02 ms ubatches=2 checkpoint=False
+  trace step_ms=422.9 gpu_busy_ms=145.0 gpu_idle_ms=277.9 gpu_idle_before_host_launch_ms=232.0 gpu_compute_comm_overlap_ms=4.5
+  kernel_groups other: 1947 calls / 37.8 ms; mamba: 432 calls / 11.2 ms; deep_ep_layout: 80 calls / 1.9 ms; deep_ep_notify: 160 calls / 20.1 ms; deep_ep_dispatch: 80 calls / 19.3 ms; moe_gemm: 160 calls / 22.9 ms; deep_ep_combine: 80 calls / 35.6 ms
+  nvtx DBO/cpu_yield: 240 calls / 409.2 ms; DeepEP/layout: 80 calls / 8.2 ms; DeepEP/dispatch: 80 calls / 25.9 ms; DeepEP/combine: 80 calls / 8.8 ms
+none-serial
+  prefill_16x256     TTFT_P50=101.48 ms ubatches=1 checkpoint=False
+  prefill_32x256     TTFT_P50=203.81 ms ubatches=2 checkpoint=False
+  prefill_128x256    TTFT_P50=537.09 ms ubatches=2 checkpoint=False
+  trace step_ms=251.6 gpu_busy_ms=135.8 gpu_idle_ms=116.0 gpu_idle_before_host_launch_ms=95.3 gpu_compute_comm_overlap_ms=0.0
+  kernel_groups other: 1947 calls / 35.1 ms; mamba: 432 calls / 11.2 ms; deep_ep_layout: 80 calls / 1.9 ms; deep_ep_notify: 160 calls / 9.9 ms; deep_ep_dispatch: 80 calls / 19.0 ms; moe_gemm: 160 calls / 22.9 ms; deep_ep_combine: 80 calls / 34.7 ms
+  nvtx DeepEP/layout: 80 calls / 5.1 ms; DeepEP/dispatch: 80 calls / 12.2 ms; DeepEP/combine: 80 calls / 6.2 ms

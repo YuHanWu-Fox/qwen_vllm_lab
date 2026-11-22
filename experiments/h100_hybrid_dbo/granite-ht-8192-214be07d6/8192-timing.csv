@@ -1,0 +1,9 @@
+arm,step_to_first_layout_p50_ms,gpu_idle_before_host_launch_inside_moe_p50_ms
+align-off,11.878,3.207
+align-on,37.184,215.004
+align-serial,24.446,88.859
+none-off,9.723,2.848
+none-on,23.351,179.05
+none-on-pinned,23.257,180.855
+none-on-short-gil,23.694,208.624
+none-serial,11.594,85.786

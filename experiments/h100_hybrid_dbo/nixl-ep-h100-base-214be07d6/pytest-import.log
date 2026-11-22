@@ -1,0 +1,11 @@
+W1122 20:40:02.571000 108289 .venv/lib/python3.12/site-packages/torch/_opaque_base.py:6] torch._opaque_base is deprecated, use torch._custom_class_base instead
+W1122 20:40:02.572000 108289 .venv/lib/python3.12/site-packages/torch/_library/opaque_object.py:288] register_opaque_type is deprecated, use register_custom_class instead
+W1122 20:40:02.572000 108289 .venv/lib/python3.12/site-packages/torch/_library/opaque_object.py:211] typ='value' is deprecated, use typ='constant' instead
+torch cuda: 13.0
+nixl: 1.5.2
+nixl-cu12: not installed
+nixl-cu13: 1.5.2
+nixl: /workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/nixl/__init__.py
+nixl_ep: /workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/nixl_ep/__init__.py
+.
+1 passed in 0.84s

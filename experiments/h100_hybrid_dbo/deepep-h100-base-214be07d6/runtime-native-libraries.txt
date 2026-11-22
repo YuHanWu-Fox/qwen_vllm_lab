@@ -1,0 +1,3 @@
+/workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/deep_ep/_C.cpython-312-x86_64-linux-gnu.so
+/workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/nvidia/nccl/lib/libnccl.so.2
+/workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/nvidia/nvshmem/lib/libnvshmem_host.so.3

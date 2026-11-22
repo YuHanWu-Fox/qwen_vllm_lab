@@ -1,0 +1,14 @@
+start 20:41:41 mamba2 align off
+end 20:42:29 mamba2 align off exit=0
+start 20:42:29 gdn align off
+end 20:44:28 gdn align off exit=0
+start 20:44:28 gdn align on
+end 20:46:29 gdn align on exit=0
+start 20:46:29 mamba2 none off
+end 20:47:16 mamba2 none off exit=0
+start 20:47:16 mamba2 none on
+end 20:48:10 mamba2 none on exit=0
+start 20:48:10 gdn none off
+end 20:49:54 gdn none off exit=0
+start 20:49:54 gdn none on
+end 20:51:43 gdn none on exit=0

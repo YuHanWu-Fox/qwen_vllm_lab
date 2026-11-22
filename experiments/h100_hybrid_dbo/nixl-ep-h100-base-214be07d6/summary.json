@@ -1,0 +1,7186 @@
+{
+  "mamba2-nixl-none": {
+    "cases": {
+      "cross_prefill": {
+        "requests_per_arm": 2,
+        "greedy_requests": 2,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.020203113555908203,
+          "p95": 0.18991565704345703,
+          "p99": 0.18991565704345703,
+          "max": 0.18991565704345703,
+          "over_0.05": 2,
+          "over_0.10": 1,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 1008,
+          "equal": 504,
+          "p50": 2.193450927734375e-05,
+          "p95": 0.07626914978027344,
+          "p99": 0.12745380401611328,
+          "max": 0.3207511901855469,
+          "over_0.05": 96,
+          "over_0.10": 24,
+          "over_0.25": 2,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 2,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 160,
+            "combine": 160
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "cross_prefill_forced": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.043951988220214844,
+          "p95": 0.09192848205566406,
+          "p99": 0.09192848205566406,
+          "max": 0.09192848205566406,
+          "over_0.05": 3,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 2,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 160,
+            "combine": 160
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "cross_prefill_greedy": {
+        "requests_per_arm": 2,
+        "greedy_requests": 2,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.05788087844848633,
+          "p95": 0.35654783248901367,
+          "p99": 0.35654783248901367,
+          "max": 0.35654783248901367,
+          "over_0.05": 4,
+          "over_0.10": 3,
+          "over_0.25": 1,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 298,
+          "equal": 162,
+          "p50": 0.0,
+          "p95": 0.10121917724609375,
+          "p99": 0.14679241180419922,
+          "max": 0.1568155288696289,
+          "over_0.05": 54,
+          "over_0.10": 17,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 2,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 160,
+            "combine": 160
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "prefill_padding_rank0": {
+        "requests_per_arm": 2,
+        "greedy_requests": 2,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.06988954544067383,
+          "p95": 0.3264598846435547,
+          "p99": 0.3264598846435547,
+          "max": 0.3264598846435547,
+          "over_0.05": 5,
+          "over_0.10": 1,
+          "over_0.25": 1,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 148,
+          "equal": 55,
+          "p50": 0.011506080627441406,
+          "p95": 0.1358175277709961,
+          "p99": 0.30887794494628906,
+          "max": 0.39270591735839844,
+          "over_0.05": 32,
+          "over_0.10": 14,
+          "over_0.25": 2,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 1,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 1,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 160,
+            "combine": 160
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "mixed": {
+        "requests_per_arm": 8,
+        "greedy_requests": 2,
+        "greedy_differences": [
+          {
+            "rank": 0,
+            "request": "prefill",
+            "position": 0,
+            "off_token": 728,
+            "on_token": 1897,
+            "off_top2_margin": 0.0,
+            "on_top2_margin": 0.125,
+            "in_each_others_top5": true,
+            "off_top5": {
+              "728": -4.145930767059326,
+              "1897": -4.145930767059326,
+              "1658": -4.583430767059326,
+              "831": -4.583430767059326,
+              "1517": -4.645930767059326
+            },
+            "on_top5": {
+              "1897": -4.002813339233398,
+              "728": -4.127813339233398,
+              "1658": -4.502813339233398,
+              "831": -4.502813339233398,
+              "1517": -4.627813339233398
+            }
+          }
+        ],
+        "sample_logprob": {
+          "n": 35,
+          "equal": 30,
+          "p50": 0.0,
+          "p95": 0.0154876708984375,
+          "p99": 0.05316972732543945,
+          "max": 0.05316972732543945,
+          "over_0.05": 1,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 1000,
+          "equal": 498,
+          "p50": 0.000171661376953125,
+          "p95": 0.06888580322265625,
+          "p99": 0.12725353240966797,
+          "max": 0.3205127716064453,
+          "over_0.05": 94,
+          "over_0.10": 21,
+          "over_0.25": 1,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "NONE/2": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 2,
+            "mixed_split_inside_prefill": 2
+          },
+          "nixl_ep_calls": {
+            "dispatch": 240,
+            "combine": 240
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 4,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 160,
+            "combine": 160
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_1_1": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 8,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_2_2": {
+        "requests_per_arm": 4,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 16,
+          "equal": 16,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 6,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_3_4": {
+        "requests_per_arm": 7,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 28,
+          "equal": 28,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 3,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_3_8": {
+        "requests_per_arm": 11,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 44,
+          "equal": 44,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "NONE/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 0,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 3,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 560,
+            "combine": 560
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_4_8": {
+        "requests_per_arm": 12,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 48,
+          "equal": 48,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 3,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_5_8": {
+        "requests_per_arm": 13,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 52,
+          "equal": 52,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 3,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_7_8": {
+        "requests_per_arm": 15,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 60,
+          "equal": 60,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_8_8": {
+        "requests_per_arm": 16,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 64,
+          "equal": 64,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 160,
+            "combine": 160
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_16_16": {
+        "requests_per_arm": 32,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 128,
+          "equal": 0,
+          "p50": 0.057135581970214844,
+          "p95": 0.25161075592041016,
+          "p99": 0.4700145721435547,
+          "max": 0.5930089950561523,
+          "over_0.05": 71,
+          "over_0.10": 39,
+          "over_0.25": 7,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 160,
+            "combine": 160
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_31_32": {
+        "requests_per_arm": 63,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 252,
+          "equal": 252,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 160,
+            "combine": 160
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_32_32": {
+        "requests_per_arm": 64,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 256,
+          "equal": 256,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 160,
+            "combine": 160
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_4_8_greedy": {
+        "requests_per_arm": 12,
+        "greedy_requests": 12,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 48,
+          "equal": 48,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 3,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "empty_rank0": {
+        "requests_per_arm": 1,
+        "greedy_requests": 1,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 4,
+          "equal": 4,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 96,
+          "equal": 96,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 4,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 4,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "empty_rank1": {
+        "requests_per_arm": 1,
+        "greedy_requests": 1,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 4,
+          "equal": 4,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 96,
+          "equal": 96,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 4,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 4,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "both_empty": {
+        "requests_per_arm": 0,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "FULL/1": 2
+          },
+          "coverage": {
+            "runtime_replay": 2,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 2,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {}
+        },
+        "dbo_off": {
+          "shapes": {
+            "FULL/1": 2
+          },
+          "coverage": {
+            "runtime_replay": 2,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 2,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {}
+        },
+        "coverage_errors": []
+      },
+      "default_prefill_511_512": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 8,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "default_prefill_512_512": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 2,
+          "p50": 0.0313262939453125,
+          "p95": 0.04725837707519531,
+          "p99": 0.04725837707519531,
+          "max": 0.04725837707519531,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 2,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 160,
+            "combine": 160
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "default_decode_31_32": {
+        "requests_per_arm": 63,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 252,
+          "equal": 252,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "default_decode_32_32": {
+        "requests_per_arm": 64,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 256,
+          "equal": 256,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      }
+    },
+    "runtime": {
+      "source": "/workspace/qwen_vllm_lab/vllm-v0.33/vllm/__init__.py",
+      "vllm": "0.34.1.dev44+g214be07d6",
+      "torch": "2.14.0+cu130",
+      "cuda": "13.0",
+      "nccl": [
+        2,
+        30,
+        7
+      ],
+      "nixl": "1.5.2",
+      "nixl_cu13": "1.5.2",
+      "nixl_ep_module": "nixl_ep_cu13.nixl_ep_cpp_torch214",
+      "nixl_device_mode_env": null,
+      "ucx_tls_env": "tcp,cuda_copy,cuda_ipc,self",
+      "initial_rank_mask": [
+        0,
+        0
+      ],
+      "flashinfer_cubin": null,
+      "flashinfer_jit_cache": null,
+      "manager": "NixlEPAll2AllManager",
+      "cache_mode": "none",
+      "block_size": 512,
+      "mamba_groups": [
+        {
+          "type": "MAMBA2",
+          "block_size": 4096,
+          "checkpoints": 1,
+          "checkpoint_alignment": 1,
+          "layers": 4
+        },
+        {
+          "type": "MAMBA2",
+          "block_size": 4096,
+          "checkpoints": 1,
+          "checkpoint_alignment": 1,
+          "layers": 4
+        },
+        {
+          "type": "MAMBA2",
+          "block_size": 4096,
+          "checkpoints": 1,
+          "checkpoint_alignment": 1,
+          "layers": 4
+        },
+        {
+          "type": "MAMBA2",
+          "block_size": 4096,
+          "checkpoints": 1,
+          "checkpoint_alignment": 1,
+          "layers": 4
+        },
+        {
+          "type": "MAMBA2",
+          "block_size": 4096,
+          "checkpoints": 1,
+          "checkpoint_alignment": 1,
+          "layers": 4
+        },
+        {
+          "type": "MAMBA2",
+          "block_size": 4096,
+          "checkpoints": 1,
+          "checkpoint_alignment": 1,
+          "layers": 4
+        },
+        {
+          "type": "MAMBA2",
+          "block_size": 4096,
+          "checkpoints": 1,
+          "checkpoint_alignment": 1,
+          "layers": 4
+        },
+        {
+          "type": "MAMBA2",
+          "block_size": 4096,
+          "checkpoints": 1,
+          "checkpoint_alignment": 1,
+          "layers": 4
+        },
+        {
+          "type": "MAMBA2",
+          "block_size": 4096,
+          "checkpoints": 1,
+          "checkpoint_alignment": 1,
+          "layers": 4
+        }
+      ],
+      "scheduler_mamba_internal_checkpoints": true,
+      "scheduler_hash_block_size": 4096,
+      "scheduler_partial_cache_hit": false,
+      "effective_cg_mode": "FULL_DECODE_ONLY",
+      "graphs": [
+        {
+          "mode": "FULL",
+          "padded_tokens": 32,
+          "padded_requests": 32,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 32,
+          "padded_requests": 32,
+          "uniform_tokens": 1,
+          "ubatches": 2
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 16,
+          "padded_requests": 16,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 16,
+          "padded_requests": 16,
+          "uniform_tokens": 1,
+          "ubatches": 2
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 8,
+          "padded_requests": 8,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 8,
+          "padded_requests": 8,
+          "uniform_tokens": 1,
+          "ubatches": 2
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 4,
+          "padded_requests": 4,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 4,
+          "padded_requests": 4,
+          "uniform_tokens": 1,
+          "ubatches": 2
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 2,
+          "padded_requests": 2,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 2,
+          "padded_requests": 2,
+          "uniform_tokens": 1,
+          "ubatches": 2
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 1,
+          "padded_requests": 1,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        }
+      ],
+      "startup_nixl_ep_calls": {
+        "dispatch": 1640,
+        "combine": 1640
+      },
+      "capture_nixl_ep_calls": {
+        "dispatch": 640,
+        "combine": 640
+      }
+    },
+    "requests_per_arm": 400,
+    "greedy_requests": 22,
+    "greedy_differing_requests": 1,
+    "greedy_differences_outside_other_top5": 0,
+    "sample_logprob": {
+      "n": 1603,
+      "equal": 1432,
+      "p50": 0.0,
+      "p95": 0.05316972732543945,
+      "p99": 0.19043350219726562,
+      "max": 0.5930089950561523,
+      "over_0.05": 86,
+      "over_0.10": 44,
+      "over_0.25": 9,
+      "over_1.00": 0
+    },
+    "prompt_logprob": {
+      "n": 2646,
+      "equal": 1411,
+      "p50": 0.0,
+      "p95": 0.0782623291015625,
+      "p99": 0.14158916473388672,
+      "max": 0.39270591735839844,
+      "over_0.05": 276,
+      "over_0.10": 76,
+      "over_0.25": 5,
+      "over_1.00": 0
+    },
+    "coverage_errors": []
+  },
+  "mamba2-nixl-align": {
+    "cases": {
+      "cross_prefill": {
+        "requests_per_arm": 2,
+        "greedy_requests": 2,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.020203113555908203,
+          "p95": 0.18991565704345703,
+          "p99": 0.18991565704345703,
+          "max": 0.18991565704345703,
+          "over_0.05": 2,
+          "over_0.10": 1,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 1008,
+          "equal": 504,
+          "p50": 2.193450927734375e-05,
+          "p95": 0.07626914978027344,
+          "p99": 0.12745380401611328,
+          "max": 0.3207511901855469,
+          "over_0.05": 96,
+          "over_0.10": 24,
+          "over_0.25": 2,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 2,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 160,
+            "combine": 160
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "cross_prefill_forced": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.043951988220214844,
+          "p95": 0.09192848205566406,
+          "p99": 0.09192848205566406,
+          "max": 0.09192848205566406,
+          "over_0.05": 3,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 2,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 160,
+            "combine": 160
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "cross_prefill_greedy": {
+        "requests_per_arm": 2,
+        "greedy_requests": 2,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.05788087844848633,
+          "p95": 0.35654783248901367,
+          "p99": 0.35654783248901367,
+          "max": 0.35654783248901367,
+          "over_0.05": 4,
+          "over_0.10": 3,
+          "over_0.25": 1,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 298,
+          "equal": 162,
+          "p50": 0.0,
+          "p95": 0.10121917724609375,
+          "p99": 0.14679241180419922,
+          "max": 0.1568155288696289,
+          "over_0.05": 54,
+          "over_0.10": 17,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 2,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 160,
+            "combine": 160
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "prefill_padding_rank0": {
+        "requests_per_arm": 2,
+        "greedy_requests": 2,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.06988954544067383,
+          "p95": 0.3264598846435547,
+          "p99": 0.3264598846435547,
+          "max": 0.3264598846435547,
+          "over_0.05": 5,
+          "over_0.10": 1,
+          "over_0.25": 1,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 148,
+          "equal": 55,
+          "p50": 0.011506080627441406,
+          "p95": 0.1358175277709961,
+          "p99": 0.30887794494628906,
+          "max": 0.39270591735839844,
+          "over_0.05": 32,
+          "over_0.10": 14,
+          "over_0.25": 2,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 1,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 1,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 160,
+            "combine": 160
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "mixed": {
+        "requests_per_arm": 8,
+        "greedy_requests": 2,
+        "greedy_differences": [
+          {
+            "rank": 0,
+            "request": "prefill",
+            "position": 0,
+            "off_token": 728,
+            "on_token": 1897,
+            "off_top2_margin": 0.0,
+            "on_top2_margin": 0.125,
+            "in_each_others_top5": true,
+            "off_top5": {
+              "728": -4.145930767059326,
+              "1897": -4.145930767059326,
+              "1658": -4.583430767059326,
+              "831": -4.583430767059326,
+              "1517": -4.645930767059326
+            },
+            "on_top5": {
+              "1897": -4.002813339233398,
+              "728": -4.127813339233398,
+              "1658": -4.502813339233398,
+              "831": -4.502813339233398,
+              "1517": -4.627813339233398
+            }
+          }
+        ],
+        "sample_logprob": {
+          "n": 35,
+          "equal": 30,
+          "p50": 0.0,
+          "p95": 0.0154876708984375,
+          "p99": 0.05316972732543945,
+          "max": 0.05316972732543945,
+          "over_0.05": 1,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 1000,
+          "equal": 498,
+          "p50": 0.000171661376953125,
+          "p95": 0.06888580322265625,
+          "p99": 0.12725353240966797,
+          "max": 0.3205127716064453,
+          "over_0.05": 94,
+          "over_0.10": 21,
+          "over_0.25": 1,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "NONE/2": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 2,
+            "mixed_split_inside_prefill": 2
+          },
+          "nixl_ep_calls": {
+            "dispatch": 240,
+            "combine": 240
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 4,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 160,
+            "combine": 160
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_1_1": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 8,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_2_2": {
+        "requests_per_arm": 4,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 16,
+          "equal": 16,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 6,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_3_4": {
+        "requests_per_arm": 7,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 28,
+          "equal": 28,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 3,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_3_8": {
+        "requests_per_arm": 11,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 44,
+          "equal": 44,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "NONE/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 0,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 3,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 560,
+            "combine": 560
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_4_8": {
+        "requests_per_arm": 12,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 48,
+          "equal": 48,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 3,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_5_8": {
+        "requests_per_arm": 13,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 52,
+          "equal": 52,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 3,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_7_8": {
+        "requests_per_arm": 15,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 60,
+          "equal": 60,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_8_8": {
+        "requests_per_arm": 16,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 64,
+          "equal": 64,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 160,
+            "combine": 160
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_16_16": {
+        "requests_per_arm": 32,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 128,
+          "equal": 0,
+          "p50": 0.057135581970214844,
+          "p95": 0.25161075592041016,
+          "p99": 0.4700145721435547,
+          "max": 0.5930089950561523,
+          "over_0.05": 71,
+          "over_0.10": 39,
+          "over_0.25": 7,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 160,
+            "combine": 160
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_31_32": {
+        "requests_per_arm": 63,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 252,
+          "equal": 252,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 160,
+            "combine": 160
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_32_32": {
+        "requests_per_arm": 64,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 256,
+          "equal": 256,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 160,
+            "combine": 160
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_4_8_greedy": {
+        "requests_per_arm": 12,
+        "greedy_requests": 12,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 48,
+          "equal": 48,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 3,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "empty_rank0": {
+        "requests_per_arm": 1,
+        "greedy_requests": 1,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 4,
+          "equal": 4,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 96,
+          "equal": 96,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 4,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 4,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "empty_rank1": {
+        "requests_per_arm": 1,
+        "greedy_requests": 1,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 4,
+          "equal": 4,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 96,
+          "equal": 96,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 4,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 4,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "both_empty": {
+        "requests_per_arm": 0,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "FULL/1": 2
+          },
+          "coverage": {
+            "runtime_replay": 2,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 2,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {}
+        },
+        "dbo_off": {
+          "shapes": {
+            "FULL/1": 2
+          },
+          "coverage": {
+            "runtime_replay": 2,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 2,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {}
+        },
+        "coverage_errors": []
+      },
+      "prefix_warm": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 2,
+          "equal": 2,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2
+          },
+          "coverage": {
+            "runtime_replay": 0,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 2
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2
+          },
+          "coverage": {
+            "runtime_replay": 0,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "prefix_hit": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.025873184204101562,
+          "p95": 0.0746622085571289,
+          "p99": 0.0746622085571289,
+          "max": 0.0746622085571289,
+          "over_0.05": 2,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 2,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 160,
+            "combine": 160
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "prefix_cold": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 8,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 2
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "checkpoint_veto": {
+        "requests_per_arm": 2,
+        "greedy_requests": 2,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 8,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 772,
+          "equal": 772,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 1
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "checkpoint_prefix": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 4,
+          "p50": 0.005517005920410156,
+          "p95": 0.1160287857055664,
+          "p99": 0.1160287857055664,
+          "max": 0.1160287857055664,
+          "over_0.05": 2,
+          "over_0.10": 1,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 1,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 1,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 160,
+            "combine": 160
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "default_prefill_511_512": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 8,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "default_prefill_512_512": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 2,
+          "p50": 0.0313262939453125,
+          "p95": 0.04725837707519531,
+          "p99": 0.04725837707519531,
+          "max": 0.04725837707519531,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 2,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 160,
+            "combine": 160
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "default_decode_31_32": {
+        "requests_per_arm": 63,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 252,
+          "equal": 252,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      },
+      "default_decode_32_32": {
+        "requests_per_arm": 64,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 256,
+          "equal": 256,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 80,
+            "combine": 80
+          }
+        },
+        "coverage_errors": []
+      }
+    },
+    "runtime": {
+      "source": "/workspace/qwen_vllm_lab/vllm-v0.33/vllm/__init__.py",
+      "vllm": "0.34.1.dev44+g214be07d6",
+      "torch": "2.14.0+cu130",
+      "cuda": "13.0",
+      "nccl": [
+        2,
+        30,
+        7
+      ],
+      "nixl": "1.5.2",
+      "nixl_cu13": "1.5.2",
+      "nixl_ep_module": "nixl_ep_cu13.nixl_ep_cpp_torch214",
+      "nixl_device_mode_env": null,
+      "ucx_tls_env": "tcp,cuda_copy,cuda_ipc,self",
+      "initial_rank_mask": [
+        0,
+        0
+      ],
+      "flashinfer_cubin": null,
+      "flashinfer_jit_cache": null,
+      "manager": "NixlEPAll2AllManager",
+      "cache_mode": "align",
+      "block_size": 512,
+      "mamba_groups": [
+        {
+          "type": "MAMBA2",
+          "block_size": 512,
+          "checkpoints": 1,
+          "checkpoint_alignment": 1,
+          "layers": 4
+        },
+        {
+          "type": "MAMBA2",
+          "block_size": 512,
+          "checkpoints": 1,
+          "checkpoint_alignment": 1,
+          "layers": 4
+        },
+        {
+          "type": "MAMBA2",
+          "block_size": 512,
+          "checkpoints": 1,
+          "checkpoint_alignment": 1,
+          "layers": 4
+        },
+        {
+          "type": "MAMBA2",
+          "block_size": 512,
+          "checkpoints": 1,
+          "checkpoint_alignment": 1,
+          "layers": 4
+        },
+        {
+          "type": "MAMBA2",
+          "block_size": 512,
+          "checkpoints": 1,
+          "checkpoint_alignment": 1,
+          "layers": 4
+        },
+        {
+          "type": "MAMBA2",
+          "block_size": 512,
+          "checkpoints": 1,
+          "checkpoint_alignment": 1,
+          "layers": 4
+        },
+        {
+          "type": "MAMBA2",
+          "block_size": 512,
+          "checkpoints": 1,
+          "checkpoint_alignment": 1,
+          "layers": 4
+        },
+        {
+          "type": "MAMBA2",
+          "block_size": 512,
+          "checkpoints": 1,
+          "checkpoint_alignment": 1,
+          "layers": 4
+        },
+        {
+          "type": "MAMBA2",
+          "block_size": 512,
+          "checkpoints": 1,
+          "checkpoint_alignment": 1,
+          "layers": 4
+        }
+      ],
+      "scheduler_mamba_internal_checkpoints": true,
+      "scheduler_hash_block_size": 512,
+      "scheduler_partial_cache_hit": false,
+      "effective_cg_mode": "FULL_DECODE_ONLY",
+      "graphs": [
+        {
+          "mode": "FULL",
+          "padded_tokens": 32,
+          "padded_requests": 32,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 32,
+          "padded_requests": 32,
+          "uniform_tokens": 1,
+          "ubatches": 2
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 16,
+          "padded_requests": 16,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 16,
+          "padded_requests": 16,
+          "uniform_tokens": 1,
+          "ubatches": 2
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 8,
+          "padded_requests": 8,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 8,
+          "padded_requests": 8,
+          "uniform_tokens": 1,
+          "ubatches": 2
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 4,
+          "padded_requests": 4,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 4,
+          "padded_requests": 4,
+          "uniform_tokens": 1,
+          "ubatches": 2
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 2,
+          "padded_requests": 2,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 2,
+          "padded_requests": 2,
+          "uniform_tokens": 1,
+          "ubatches": 2
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 1,
+          "padded_requests": 1,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        }
+      ],
+      "startup_nixl_ep_calls": {
+        "dispatch": 1640,
+        "combine": 1640
+      },
+      "capture_nixl_ep_calls": {
+        "dispatch": 640,
+        "combine": 640
+      }
+    },
+    "prefix_hit_vs_cold": {
+      "off": {
+        "n": 8,
+        "equal": 0,
+        "p50": 0.02898693084716797,
+        "p95": 0.11112689971923828,
+        "p99": 0.11112689971923828,
+        "max": 0.11112689971923828,
+        "over_0.05": 2,
+        "over_0.10": 1,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "on": {
+        "n": 8,
+        "equal": 0,
+        "p50": 0.04747772216796875,
+        "p95": 0.08525371551513672,
+        "p99": 0.08525371551513672,
+        "max": 0.08525371551513672,
+        "over_0.05": 3,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      }
+    },
+    "requests_per_arm": 410,
+    "greedy_requests": 24,
+    "greedy_differing_requests": 1,
+    "greedy_differences_outside_other_top5": 0,
+    "sample_logprob": {
+      "n": 1637,
+      "equal": 1454,
+      "p50": 0.0,
+      "p95": 0.05406475067138672,
+      "p99": 0.19043350219726562,
+      "max": 0.5930089950561523,
+      "over_0.05": 90,
+      "over_0.10": 45,
+      "over_0.25": 9,
+      "over_1.00": 0
+    },
+    "prompt_logprob": {
+      "n": 3418,
+      "equal": 2183,
+      "p50": 0.0,
+      "p95": 0.06720161437988281,
+      "p99": 0.13086700439453125,
+      "max": 0.39270591735839844,
+      "over_0.05": 276,
+      "over_0.10": 76,
+      "over_0.25": 5,
+      "over_1.00": 0
+    },
+    "coverage_errors": []
+  },
+  "gdn-nixl-none": {
+    "cases": {
+      "cross_prefill": {
+        "requests_per_arm": 2,
+        "greedy_requests": 2,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.03830587863922119,
+          "p95": 0.07480287551879883,
+          "p99": 0.07480287551879883,
+          "max": 0.07480287551879883,
+          "over_0.05": 2,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 1400,
+          "equal": 0,
+          "p50": 0.023443222045898438,
+          "p95": 0.09694290161132812,
+          "p99": 0.15317344665527344,
+          "max": 0.3260936737060547,
+          "over_0.05": 295,
+          "over_0.10": 63,
+          "over_0.25": 4,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 2,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 192,
+            "combine": 192
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "cross_prefill_forced": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.02083587646484375,
+          "p95": 0.04360389709472656,
+          "p99": 0.04360389709472656,
+          "max": 0.04360389709472656,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 2,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 192,
+            "combine": 192
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "cross_prefill_greedy": {
+        "requests_per_arm": 2,
+        "greedy_requests": 2,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.05012798309326172,
+          "p95": 0.07723450660705566,
+          "p99": 0.07723450660705566,
+          "max": 0.07723450660705566,
+          "over_0.05": 4,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 298,
+          "equal": 0,
+          "p50": 0.032637596130371094,
+          "p95": 0.11529254913330078,
+          "p99": 0.21370792388916016,
+          "max": 0.6003532409667969,
+          "over_0.05": 93,
+          "over_0.10": 23,
+          "over_0.25": 1,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 2,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 192,
+            "combine": 192
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "prefill_padding_rank0": {
+        "requests_per_arm": 2,
+        "greedy_requests": 2,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.05235004425048828,
+          "p95": 0.26550209522247314,
+          "p99": 0.26550209522247314,
+          "max": 0.26550209522247314,
+          "over_0.05": 4,
+          "over_0.10": 2,
+          "over_0.25": 1,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 148,
+          "equal": 0,
+          "p50": 0.03791046142578125,
+          "p95": 0.18486690521240234,
+          "p99": 0.26772308349609375,
+          "max": 0.29488182067871094,
+          "over_0.05": 53,
+          "over_0.10": 19,
+          "over_0.25": 3,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 1,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 1,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 192,
+            "combine": 192
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "mixed": {
+        "requests_per_arm": 8,
+        "greedy_requests": 2,
+        "greedy_differences": [
+          {
+            "rank": 0,
+            "request": "prefill",
+            "position": 2,
+            "off_token": 38618,
+            "on_token": 1506,
+            "off_top2_margin": 0.0625,
+            "on_top2_margin": 0.0,
+            "in_each_others_top5": true,
+            "off_top5": {
+              "38618": -4.798779010772705,
+              "1506": -4.861279010772705,
+              "11": -4.986279010772705,
+              "449": -5.048779010772705,
+              "4849": -5.298779010772705
+            },
+            "on_top5": {
+              "1506": -4.801620960235596,
+              "38618": -4.801620960235596,
+              "11": -4.926620960235596,
+              "449": -4.989120960235596,
+              "4849": -5.239120960235596
+            }
+          }
+        ],
+        "sample_logprob": {
+          "n": 37,
+          "equal": 0,
+          "p50": 0.028716087341308594,
+          "p95": 0.21794986724853516,
+          "p99": 0.3179283142089844,
+          "max": 0.3179283142089844,
+          "over_0.05": 12,
+          "over_0.10": 6,
+          "over_0.25": 1,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 1204,
+          "equal": 0,
+          "p50": 0.02743053436279297,
+          "p95": 0.11155223846435547,
+          "p99": 0.19612789154052734,
+          "max": 0.8184299468994141,
+          "over_0.05": 314,
+          "over_0.10": 78,
+          "over_0.25": 7,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "NONE/2": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 2,
+            "mixed_split_inside_prefill": 2
+          },
+          "nixl_ep_calls": {
+            "dispatch": 288,
+            "combine": 288
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 4,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 192,
+            "combine": 192
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_1_1": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.09518146514892578,
+          "p95": 0.5252285003662109,
+          "p99": 0.5252285003662109,
+          "max": 0.5252285003662109,
+          "over_0.05": 6,
+          "over_0.10": 3,
+          "over_0.25": 1,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_2_2": {
+        "requests_per_arm": 4,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 16,
+          "equal": 0,
+          "p50": 0.07287216186523438,
+          "p95": 0.13912296295166016,
+          "p99": 0.26703357696533203,
+          "max": 0.26703357696533203,
+          "over_0.05": 10,
+          "over_0.10": 3,
+          "over_0.25": 1,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 6,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_3_4": {
+        "requests_per_arm": 7,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 28,
+          "equal": 0,
+          "p50": 0.07469940185546875,
+          "p95": 0.16994094848632812,
+          "p99": 0.2296295166015625,
+          "max": 0.2296295166015625,
+          "over_0.05": 18,
+          "over_0.10": 9,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 3,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_3_8": {
+        "requests_per_arm": 11,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 44,
+          "equal": 0,
+          "p50": 0.046555519104003906,
+          "p95": 0.16470909118652344,
+          "p99": 0.22247314453125,
+          "max": 0.22247314453125,
+          "over_0.05": 19,
+          "over_0.10": 9,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "NONE/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 0,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 3,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 672,
+            "combine": 672
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_4_8": {
+        "requests_per_arm": 12,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 48,
+          "equal": 0,
+          "p50": 0.054889678955078125,
+          "p95": 0.17933273315429688,
+          "p99": 0.3134889602661133,
+          "max": 0.3134889602661133,
+          "over_0.05": 26,
+          "over_0.10": 8,
+          "over_0.25": 1,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 3,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_5_8": {
+        "requests_per_arm": 13,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 52,
+          "equal": 0,
+          "p50": 0.061774253845214844,
+          "p95": 0.21455001831054688,
+          "p99": 0.283203125,
+          "max": 0.2869586944580078,
+          "over_0.05": 29,
+          "over_0.10": 12,
+          "over_0.25": 2,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 3,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_7_8": {
+        "requests_per_arm": 15,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 60,
+          "equal": 0,
+          "p50": 0.04742240905761719,
+          "p95": 0.29346561431884766,
+          "p99": 0.46209716796875,
+          "max": 0.9336557388305664,
+          "over_0.05": 28,
+          "over_0.10": 13,
+          "over_0.25": 5,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_8_8": {
+        "requests_per_arm": 16,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 64,
+          "equal": 0,
+          "p50": 0.06486701965332031,
+          "p95": 0.29181671142578125,
+          "p99": 0.4025535583496094,
+          "max": 0.42401695251464844,
+          "over_0.05": 36,
+          "over_0.10": 21,
+          "over_0.25": 4,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 192,
+            "combine": 192
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_16_16": {
+        "requests_per_arm": 32,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 128,
+          "equal": 0,
+          "p50": 0.06261730194091797,
+          "p95": 0.2741527557373047,
+          "p99": 0.3246288299560547,
+          "max": 0.3515157699584961,
+          "over_0.05": 72,
+          "over_0.10": 38,
+          "over_0.25": 8,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 192,
+            "combine": 192
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_31_32": {
+        "requests_per_arm": 63,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 252,
+          "equal": 0,
+          "p50": 0.06415081024169922,
+          "p95": 0.2322063446044922,
+          "p99": 0.3939495086669922,
+          "max": 1.1351890563964844,
+          "over_0.05": 149,
+          "over_0.10": 72,
+          "over_0.25": 12,
+          "over_1.00": 1
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 192,
+            "combine": 192
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_32_32": {
+        "requests_per_arm": 64,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 256,
+          "equal": 0,
+          "p50": 0.057941436767578125,
+          "p95": 0.2771568298339844,
+          "p99": 0.5293388366699219,
+          "max": 0.6300325393676758,
+          "over_0.05": 143,
+          "over_0.10": 76,
+          "over_0.25": 18,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 192,
+            "combine": 192
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_4_8_greedy": {
+        "requests_per_arm": 12,
+        "greedy_requests": 12,
+        "greedy_differences": [
+          {
+            "rank": 0,
+            "request": "req-3",
+            "position": 0,
+            "off_token": 309,
+            "on_token": 398,
+            "off_top2_margin": 0.0,
+            "on_top2_margin": 0.0625,
+            "in_each_others_top5": true,
+            "off_top5": {
+              "309": -3.947873592376709,
+              "757": -3.947873592376709,
+              "398": -4.010373592376709,
+              "268": -4.072873592376709,
+              "823": -4.322873592376709
+            },
+            "on_top5": {
+              "398": -3.9180662631988525,
+              "757": -3.9805662631988525,
+              "309": -3.9805662631988525,
+              "268": -4.105566024780273,
+              "823": -4.293066024780273
+            }
+          },
+          {
+            "rank": 1,
+            "request": "req-6",
+            "position": 1,
+            "off_token": 262,
+            "on_token": 220,
+            "off_top2_margin": 0.125,
+            "on_top2_margin": 0.0,
+            "in_each_others_top5": true,
+            "off_top5": {
+              "262": -3.066035509109497,
+              "220": -3.191035509109497,
+              "785": -3.378535509109497,
+              "2610": -3.441035509109497,
+              "4382": -3.503535509109497
+            },
+            "on_top5": {
+              "220": -3.1494200229644775,
+              "262": -3.1494200229644775,
+              "2610": -3.2744200229644775,
+              "785": -3.3369200229644775,
+              "198": -3.5244200229644775
+            }
+          }
+        ],
+        "sample_logprob": {
+          "n": 43,
+          "equal": 0,
+          "p50": 0.03833127021789551,
+          "p95": 0.18760466575622559,
+          "p99": 0.2644280195236206,
+          "max": 0.2644280195236206,
+          "over_0.05": 15,
+          "over_0.10": 8,
+          "over_0.25": 1,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 3,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "empty_rank0": {
+        "requests_per_arm": 1,
+        "greedy_requests": 1,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 4,
+          "equal": 0,
+          "p50": 0.01323854923248291,
+          "p95": 0.05086708068847656,
+          "p99": 0.05086708068847656,
+          "max": 0.05086708068847656,
+          "over_0.05": 1,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 96,
+          "equal": 0,
+          "p50": 0.04876995086669922,
+          "p95": 0.22358417510986328,
+          "p99": 0.460479736328125,
+          "max": 0.4681854248046875,
+          "over_0.05": 45,
+          "over_0.10": 20,
+          "over_0.25": 4,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 4,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 4,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "empty_rank1": {
+        "requests_per_arm": 1,
+        "greedy_requests": 1,
+        "greedy_differences": [
+          {
+            "rank": 0,
+            "request": "empty_rank1",
+            "position": 0,
+            "off_token": 7,
+            "on_token": 220,
+            "off_top2_margin": 0.0625,
+            "on_top2_margin": 0.0625,
+            "in_each_others_top5": true,
+            "off_top5": {
+              "7": -4.8163299560546875,
+              "220": -4.8788299560546875,
+              "13": -4.8788299560546875,
+              "72": -5.1913299560546875,
+              "62": -5.3163299560546875
+            },
+            "on_top5": {
+              "220": -4.787281036376953,
+              "7": -4.849781036376953,
+              "13": -4.912281036376953,
+              "62": -5.224781036376953,
+              "72": -5.318531036376953
+            }
+          }
+        ],
+        "sample_logprob": {
+          "n": 1,
+          "equal": 0,
+          "p50": 0.033451080322265625,
+          "p95": 0.033451080322265625,
+          "p99": 0.033451080322265625,
+          "max": 0.033451080322265625,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 96,
+          "equal": 0,
+          "p50": 0.03460121154785156,
+          "p95": 0.08932304382324219,
+          "p99": 0.12760543823242188,
+          "max": 0.16538047790527344,
+          "over_0.05": 24,
+          "over_0.10": 5,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 4,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 4,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "both_empty": {
+        "requests_per_arm": 0,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "FULL/1": 2
+          },
+          "coverage": {
+            "runtime_replay": 2,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 2,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {}
+        },
+        "dbo_off": {
+          "shapes": {
+            "FULL/1": 2
+          },
+          "coverage": {
+            "runtime_replay": 2,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 2,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {}
+        },
+        "coverage_errors": []
+      },
+      "default_prefill_511_512": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.012865066528320312,
+          "p95": 0.17682361602783203,
+          "p99": 0.17682361602783203,
+          "max": 0.17682361602783203,
+          "over_0.05": 1,
+          "over_0.10": 1,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "default_prefill_512_512": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.02160930633544922,
+          "p95": 0.08199691772460938,
+          "p99": 0.08199691772460938,
+          "max": 0.08199691772460938,
+          "over_0.05": 2,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 2,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 192,
+            "combine": 192
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "default_decode_31_32": {
+        "requests_per_arm": 63,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 252,
+          "equal": 0,
+          "p50": 0.052921295166015625,
+          "p95": 0.22669124603271484,
+          "p99": 0.3415355682373047,
+          "max": 0.6369752883911133,
+          "over_0.05": 133,
+          "over_0.10": 63,
+          "over_0.25": 11,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "default_decode_32_32": {
+        "requests_per_arm": 64,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 256,
+          "equal": 0,
+          "p50": 0.06274223327636719,
+          "p95": 0.254241943359375,
+          "p99": 0.34920501708984375,
+          "max": 0.6822547912597656,
+          "over_0.05": 151,
+          "over_0.10": 78,
+          "over_0.25": 14,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      }
+    },
+    "runtime": {
+      "source": "/workspace/qwen_vllm_lab/vllm-v0.33/vllm/__init__.py",
+      "vllm": "0.34.1.dev44+g214be07d6",
+      "torch": "2.14.0+cu130",
+      "cuda": "13.0",
+      "nccl": [
+        2,
+        30,
+        7
+      ],
+      "nixl": "1.5.2",
+      "nixl_cu13": "1.5.2",
+      "nixl_ep_module": "nixl_ep_cu13.nixl_ep_cpp_torch214",
+      "nixl_device_mode_env": null,
+      "ucx_tls_env": "tcp,cuda_copy,cuda_ipc,self",
+      "initial_rank_mask": [
+        0,
+        0
+      ],
+      "flashinfer_cubin": "0.7.3",
+      "flashinfer_jit_cache": "0.7.3+cu130",
+      "manager": "NixlEPAll2AllManager",
+      "cache_mode": "none",
+      "block_size": 768,
+      "mamba_groups": [
+        {
+          "type": "GDN_ATTN",
+          "block_size": 4096,
+          "checkpoints": 0,
+          "checkpoint_alignment": null,
+          "layers": 12
+        },
+        {
+          "type": "GDN_ATTN",
+          "block_size": 4096,
+          "checkpoints": 0,
+          "checkpoint_alignment": null,
+          "layers": 12
+        },
+        {
+          "type": "GDN_ATTN",
+          "block_size": 4096,
+          "checkpoints": 0,
+          "checkpoint_alignment": null,
+          "layers": 12
+        }
+      ],
+      "scheduler_mamba_internal_checkpoints": false,
+      "scheduler_hash_block_size": 12288,
+      "scheduler_partial_cache_hit": false,
+      "effective_cg_mode": "FULL_DECODE_ONLY",
+      "graphs": [
+        {
+          "mode": "FULL",
+          "padded_tokens": 32,
+          "padded_requests": 32,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 32,
+          "padded_requests": 32,
+          "uniform_tokens": 1,
+          "ubatches": 2
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 16,
+          "padded_requests": 16,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 16,
+          "padded_requests": 16,
+          "uniform_tokens": 1,
+          "ubatches": 2
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 8,
+          "padded_requests": 8,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 8,
+          "padded_requests": 8,
+          "uniform_tokens": 1,
+          "ubatches": 2
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 4,
+          "padded_requests": 4,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 4,
+          "padded_requests": 4,
+          "uniform_tokens": 1,
+          "ubatches": 2
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 2,
+          "padded_requests": 2,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 2,
+          "padded_requests": 2,
+          "uniform_tokens": 1,
+          "ubatches": 2
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 1,
+          "padded_requests": 1,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        }
+      ],
+      "startup_nixl_ep_calls": {
+        "dispatch": 1968,
+        "combine": 1968
+      },
+      "capture_nixl_ep_calls": {
+        "dispatch": 768,
+        "combine": 768
+      }
+    },
+    "requests_per_arm": 400,
+    "greedy_requests": 22,
+    "greedy_differing_requests": 4,
+    "greedy_differences_outside_other_top5": 0,
+    "sample_logprob": {
+      "n": 1597,
+      "equal": 0,
+      "p50": 0.05494499206542969,
+      "p95": 0.2474212646484375,
+      "p99": 0.41489601135253906,
+      "max": 1.1351890563964844,
+      "over_0.05": 861,
+      "over_0.10": 422,
+      "over_0.25": 80,
+      "over_1.00": 1
+    },
+    "prompt_logprob": {
+      "n": 3242,
+      "equal": 0,
+      "p50": 0.026830673217773438,
+      "p95": 0.110992431640625,
+      "p99": 0.21370792388916016,
+      "max": 0.8184299468994141,
+      "over_0.05": 824,
+      "over_0.10": 208,
+      "over_0.25": 19,
+      "over_1.00": 0
+    },
+    "coverage_errors": []
+  },
+  "gdn-nixl-align": {
+    "cases": {
+      "cross_prefill": {
+        "requests_per_arm": 2,
+        "greedy_requests": 2,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.02164435386657715,
+          "p95": 0.04992842674255371,
+          "p99": 0.04992842674255371,
+          "max": 0.04992842674255371,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 1400,
+          "equal": 0,
+          "p50": 0.024900436401367188,
+          "p95": 0.09696006774902344,
+          "p99": 0.16696548461914062,
+          "max": 0.35651493072509766,
+          "over_0.05": 299,
+          "over_0.10": 66,
+          "over_0.25": 3,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 2,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 192,
+            "combine": 192
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "cross_prefill_forced": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.023256301879882812,
+          "p95": 0.04959869384765625,
+          "p99": 0.04959869384765625,
+          "max": 0.04959869384765625,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 2,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 192,
+            "combine": 192
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "cross_prefill_greedy": {
+        "requests_per_arm": 2,
+        "greedy_requests": 2,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.05006074905395508,
+          "p95": 0.07069540023803711,
+          "p99": 0.07069540023803711,
+          "max": 0.07069540023803711,
+          "over_0.05": 4,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 298,
+          "equal": 0,
+          "p50": 0.0331878662109375,
+          "p95": 0.13451671600341797,
+          "p99": 0.20027732849121094,
+          "max": 0.2967863082885742,
+          "over_0.05": 100,
+          "over_0.10": 30,
+          "over_0.25": 3,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 2,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 192,
+            "combine": 192
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "prefill_padding_rank0": {
+        "requests_per_arm": 2,
+        "greedy_requests": 2,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.03595423698425293,
+          "p95": 0.2658342123031616,
+          "p99": 0.2658342123031616,
+          "max": 0.2658342123031616,
+          "over_0.05": 2,
+          "over_0.10": 2,
+          "over_0.25": 1,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 148,
+          "equal": 0,
+          "p50": 0.0297393798828125,
+          "p95": 0.1396169662475586,
+          "p99": 0.24297714233398438,
+          "max": 0.3674449920654297,
+          "over_0.05": 49,
+          "over_0.10": 14,
+          "over_0.25": 1,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 1,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 1,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 192,
+            "combine": 192
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "mixed": {
+        "requests_per_arm": 8,
+        "greedy_requests": 2,
+        "greedy_differences": [
+          {
+            "rank": 0,
+            "request": "prefill",
+            "position": 2,
+            "off_token": 1506,
+            "on_token": 38618,
+            "off_top2_margin": 0.0,
+            "on_top2_margin": 0.0625,
+            "in_each_others_top5": true,
+            "off_top5": {
+              "1506": -4.857181549072266,
+              "38618": -4.857181549072266,
+              "11": -4.982181549072266,
+              "449": -5.044681549072266,
+              "4849": -5.357181549072266
+            },
+            "on_top5": {
+              "38618": -4.805203437805176,
+              "1506": -4.867703437805176,
+              "11": -4.992703437805176,
+              "449": -5.055203437805176,
+              "4849": -5.305203437805176
+            }
+          }
+        ],
+        "sample_logprob": {
+          "n": 37,
+          "equal": 0,
+          "p50": 0.05407524108886719,
+          "p95": 0.14386367797851562,
+          "p99": 0.24786663055419922,
+          "max": 0.24786663055419922,
+          "over_0.05": 20,
+          "over_0.10": 10,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 1204,
+          "equal": 0,
+          "p50": 0.026824951171875,
+          "p95": 0.10005378723144531,
+          "p99": 0.17165374755859375,
+          "max": 0.3912239074707031,
+          "over_0.05": 301,
+          "over_0.10": 61,
+          "over_0.25": 4,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "NONE/2": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 2,
+            "mixed_split_inside_prefill": 2
+          },
+          "nixl_ep_calls": {
+            "dispatch": 288,
+            "combine": 288
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 4,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 192,
+            "combine": 192
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_1_1": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.09762001037597656,
+          "p95": 0.3103904724121094,
+          "p99": 0.3103904724121094,
+          "max": 0.3103904724121094,
+          "over_0.05": 7,
+          "over_0.10": 3,
+          "over_0.25": 1,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_2_2": {
+        "requests_per_arm": 4,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 16,
+          "equal": 0,
+          "p50": 0.06097221374511719,
+          "p95": 0.2136707305908203,
+          "p99": 0.35825538635253906,
+          "max": 0.35825538635253906,
+          "over_0.05": 8,
+          "over_0.10": 4,
+          "over_0.25": 1,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 6,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_3_4": {
+        "requests_per_arm": 7,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 28,
+          "equal": 0,
+          "p50": 0.06005382537841797,
+          "p95": 0.23376941680908203,
+          "p99": 0.23546409606933594,
+          "max": 0.23546409606933594,
+          "over_0.05": 17,
+          "over_0.10": 12,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 3,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_3_8": {
+        "requests_per_arm": 11,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 44,
+          "equal": 0,
+          "p50": 0.049121856689453125,
+          "p95": 0.14667510986328125,
+          "p99": 0.24466609954833984,
+          "max": 0.24466609954833984,
+          "over_0.05": 20,
+          "over_0.10": 5,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "NONE/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 0,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 3,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 672,
+            "combine": 672
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_4_8": {
+        "requests_per_arm": 12,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 48,
+          "equal": 0,
+          "p50": 0.0632171630859375,
+          "p95": 0.2518501281738281,
+          "p99": 0.38812255859375,
+          "max": 0.38812255859375,
+          "over_0.05": 29,
+          "over_0.10": 12,
+          "over_0.25": 3,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 3,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_5_8": {
+        "requests_per_arm": 13,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 52,
+          "equal": 0,
+          "p50": 0.07977676391601562,
+          "p95": 0.27572059631347656,
+          "p99": 0.3723640441894531,
+          "max": 0.37773895263671875,
+          "over_0.05": 33,
+          "over_0.10": 16,
+          "over_0.25": 4,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 3,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_7_8": {
+        "requests_per_arm": 15,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 60,
+          "equal": 0,
+          "p50": 0.05475807189941406,
+          "p95": 0.251434326171875,
+          "p99": 0.3107280731201172,
+          "max": 0.3444185256958008,
+          "over_0.05": 32,
+          "over_0.10": 20,
+          "over_0.25": 4,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_8_8": {
+        "requests_per_arm": 16,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 64,
+          "equal": 0,
+          "p50": 0.05833244323730469,
+          "p95": 0.1617441177368164,
+          "p99": 0.3664684295654297,
+          "max": 0.4558858871459961,
+          "over_0.05": 34,
+          "over_0.10": 17,
+          "over_0.25": 3,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 192,
+            "combine": 192
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_16_16": {
+        "requests_per_arm": 32,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 128,
+          "equal": 0,
+          "p50": 0.06781482696533203,
+          "p95": 0.2885017395019531,
+          "p99": 0.38236141204833984,
+          "max": 0.6721954345703125,
+          "over_0.05": 79,
+          "over_0.10": 40,
+          "over_0.25": 9,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 192,
+            "combine": 192
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_31_32": {
+        "requests_per_arm": 63,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 252,
+          "equal": 0,
+          "p50": 0.058638572692871094,
+          "p95": 0.2951831817626953,
+          "p99": 0.43881797790527344,
+          "max": 0.6065998077392578,
+          "over_0.05": 139,
+          "over_0.10": 65,
+          "over_0.25": 17,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 192,
+            "combine": 192
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_32_32": {
+        "requests_per_arm": 64,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 256,
+          "equal": 0,
+          "p50": 0.0575408935546875,
+          "p95": 0.22837448120117188,
+          "p99": 0.4808530807495117,
+          "max": 0.5709733963012695,
+          "over_0.05": 135,
+          "over_0.10": 70,
+          "over_0.25": 10,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 192,
+            "combine": 192
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "decode_4_8_greedy": {
+        "requests_per_arm": 12,
+        "greedy_requests": 12,
+        "greedy_differences": [
+          {
+            "rank": 0,
+            "request": "req-1",
+            "position": 1,
+            "off_token": 785,
+            "on_token": 2132,
+            "off_top2_margin": 0.0,
+            "on_top2_margin": 0.375,
+            "in_each_others_top5": true,
+            "off_top5": {
+              "785": -1.0608798265457153,
+              "2132": -1.0608798265457153,
+              "32313": -2.248379707336426,
+              "40": -3.748379707336426,
+              "1": -4.498379707336426
+            },
+            "on_top5": {
+              "2132": -0.7710002660751343,
+              "785": -1.1460002660751343,
+              "32313": -2.583500385284424,
+              "40": -3.896000385284424,
+              "1": -4.708500385284424
+            }
+          },
+          {
+            "rank": 1,
+            "request": "req-0",
+            "position": 2,
+            "off_token": 11,
+            "on_token": 13,
+            "off_top2_margin": 0.0,
+            "on_top2_margin": 0.0625,
+            "in_each_others_top5": true,
+            "off_top5": {
+              "11": -2.7756917476654053,
+              "13": -2.7756917476654053,
+              "525": -2.9006917476654053,
+              "323": -3.0881917476654053,
+              "315": -3.1506917476654053
+            },
+            "on_top5": {
+              "13": -2.732616662979126,
+              "11": -2.795116662979126,
+              "525": -2.920116662979126,
+              "323": -3.107616662979126,
+              "315": -3.107616662979126
+            }
+          },
+          {
+            "rank": 1,
+            "request": "req-6",
+            "position": 1,
+            "off_token": 262,
+            "on_token": 220,
+            "off_top2_margin": 0.0625,
+            "on_top2_margin": 0.0,
+            "in_each_others_top5": true,
+            "off_top5": {
+              "262": -3.1115357875823975,
+              "220": -3.1740357875823975,
+              "785": -3.3615357875823975,
+              "2610": -3.3615357875823975,
+              "4382": -3.4240357875823975
+            },
+            "on_top5": {
+              "220": -3.1756765842437744,
+              "262": -3.1756765842437744,
+              "785": -3.3006765842437744,
+              "2610": -3.3006765842437744,
+              "4382": -3.5506765842437744
+            }
+          }
+        ],
+        "sample_logprob": {
+          "n": 43,
+          "equal": 0,
+          "p50": 0.03539538383483887,
+          "p95": 0.1177220344543457,
+          "p99": 0.22795820236206055,
+          "max": 0.22795820236206055,
+          "over_0.05": 17,
+          "over_0.10": 4,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 3,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "empty_rank0": {
+        "requests_per_arm": 1,
+        "greedy_requests": 1,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 4,
+          "equal": 0,
+          "p50": 0.048291683197021484,
+          "p95": 0.1480032205581665,
+          "p99": 0.1480032205581665,
+          "max": 0.1480032205581665,
+          "over_0.05": 1,
+          "over_0.10": 1,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 96,
+          "equal": 0,
+          "p50": 0.03801155090332031,
+          "p95": 0.1425342559814453,
+          "p99": 0.238189697265625,
+          "max": 0.3337717056274414,
+          "over_0.05": 41,
+          "over_0.10": 13,
+          "over_0.25": 1,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 4,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 4,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "empty_rank1": {
+        "requests_per_arm": 1,
+        "greedy_requests": 1,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 4,
+          "equal": 0,
+          "p50": 0.059549570083618164,
+          "p95": 0.14517593383789062,
+          "p99": 0.14517593383789062,
+          "max": 0.14517593383789062,
+          "over_0.05": 2,
+          "over_0.10": 1,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 96,
+          "equal": 0,
+          "p50": 0.026601791381835938,
+          "p95": 0.07206535339355469,
+          "p99": 0.15151596069335938,
+          "max": 0.15974044799804688,
+          "over_0.05": 18,
+          "over_0.10": 2,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 4,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 4,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "both_empty": {
+        "requests_per_arm": 0,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "FULL/1": 2
+          },
+          "coverage": {
+            "runtime_replay": 2,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 2,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {}
+        },
+        "dbo_off": {
+          "shapes": {
+            "FULL/1": 2
+          },
+          "coverage": {
+            "runtime_replay": 2,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 2,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {}
+        },
+        "coverage_errors": []
+      },
+      "prefix_warm": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 2,
+          "equal": 0,
+          "p50": 0.03472900390625,
+          "p95": 0.07390308380126953,
+          "p99": 0.07390308380126953,
+          "max": 0.07390308380126953,
+          "over_0.05": 1,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2
+          },
+          "coverage": {
+            "runtime_replay": 0,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 2
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2
+          },
+          "coverage": {
+            "runtime_replay": 0,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "prefix_hit": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.022752761840820312,
+          "p95": 0.083740234375,
+          "p99": 0.083740234375,
+          "max": 0.083740234375,
+          "over_0.05": 2,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 2,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 192,
+            "combine": 192
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "prefix_cold": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.008815765380859375,
+          "p95": 0.11841392517089844,
+          "p99": 0.11841392517089844,
+          "max": 0.11841392517089844,
+          "over_0.05": 1,
+          "over_0.10": 1,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 2
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "checkpoint_veto": {
+        "requests_per_arm": 2,
+        "greedy_requests": 2,
+        "greedy_differences": [
+          {
+            "rank": 0,
+            "request": "target",
+            "position": 1,
+            "off_token": 16,
+            "on_token": 17,
+            "off_top2_margin": 0.0,
+            "on_top2_margin": 0.0625,
+            "in_each_others_top5": true,
+            "off_top5": {
+              "16": -2.4435720443725586,
+              "17": -2.4435720443725586,
+              "15": -3.1935720443725586,
+              "18": -3.2560720443725586,
+              "19": -3.6310720443725586
+            },
+            "on_top5": {
+              "17": -2.4167115688323975,
+              "16": -2.4792115688323975,
+              "15": -3.1667115688323975,
+              "18": -3.2292115688323975,
+              "19": -3.6042115688323975
+            }
+          }
+        ],
+        "sample_logprob": {
+          "n": 6,
+          "equal": 0,
+          "p50": 0.03563952445983887,
+          "p95": 0.07168817520141602,
+          "p99": 0.07168817520141602,
+          "max": 0.07168817520141602,
+          "over_0.05": 1,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 1028,
+          "equal": 0,
+          "p50": 0.025220870971679688,
+          "p95": 0.09955692291259766,
+          "p99": 0.1783466339111328,
+          "max": 0.4027061462402344,
+          "over_0.05": 244,
+          "over_0.10": 51,
+          "over_0.25": 5,
+          "over_1.00": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 1
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "checkpoint_prefix": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.032054901123046875,
+          "p95": 0.06849956512451172,
+          "p99": 0.06849956512451172,
+          "max": 0.06849956512451172,
+          "over_0.05": 2,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 1,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 1,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 192,
+            "combine": 192
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "default_prefill_511_512": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.010270118713378906,
+          "p95": 0.1630573272705078,
+          "p99": 0.1630573272705078,
+          "max": 0.1630573272705078,
+          "over_0.05": 1,
+          "over_0.10": 1,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "default_prefill_512_512": {
+        "requests_per_arm": 2,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 8,
+          "equal": 0,
+          "p50": 0.018951416015625,
+          "p95": 0.0486602783203125,
+          "p99": 0.0486602783203125,
+          "max": 0.0486602783203125,
+          "over_0.05": 0,
+          "over_0.10": 0,
+          "over_0.25": 0,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/2": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 2,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 192,
+            "combine": 192
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "default_decode_31_32": {
+        "requests_per_arm": 63,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 252,
+          "equal": 0,
+          "p50": 0.05303764343261719,
+          "p95": 0.24514484405517578,
+          "p99": 0.3970489501953125,
+          "max": 0.645172119140625,
+          "over_0.05": 135,
+          "over_0.10": 74,
+          "over_0.25": 12,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      },
+      "default_decode_32_32": {
+        "requests_per_arm": 64,
+        "greedy_requests": 0,
+        "greedy_differences": [],
+        "sample_logprob": {
+          "n": 256,
+          "equal": 0,
+          "p50": 0.05914592742919922,
+          "p95": 0.26795196533203125,
+          "p99": 0.3570718765258789,
+          "max": 0.5238780975341797,
+          "over_0.05": 145,
+          "over_0.10": 83,
+          "over_0.25": 16,
+          "over_1.00": 0
+        },
+        "prompt_logprob": {
+          "n": 0
+        },
+        "dbo_on": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/2": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 6,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0,
+            "empty_second": 0,
+            "one_valid_in_second": 0,
+            "split_inside_prefill": 0,
+            "mixed_split_inside_prefill": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "dbo_off": {
+          "shapes": {
+            "NONE/1": 2,
+            "FULL/1": 6
+          },
+          "coverage": {
+            "runtime_replay": 6,
+            "runtime_microbatch_replay": 0,
+            "dummy_forward": 0,
+            "checkpoint_veto": 0
+          },
+          "nixl_ep_calls": {
+            "dispatch": 96,
+            "combine": 96
+          }
+        },
+        "coverage_errors": []
+      }
+    },
+    "runtime": {
+      "source": "/workspace/qwen_vllm_lab/vllm-v0.33/vllm/__init__.py",
+      "vllm": "0.34.1.dev44+g214be07d6",
+      "torch": "2.14.0+cu130",
+      "cuda": "13.0",
+      "nccl": [
+        2,
+        30,
+        7
+      ],
+      "nixl": "1.5.2",
+      "nixl_cu13": "1.5.2",
+      "nixl_ep_module": "nixl_ep_cu13.nixl_ep_cpp_torch214",
+      "nixl_device_mode_env": null,
+      "ucx_tls_env": "tcp,cuda_copy,cuda_ipc,self",
+      "initial_rank_mask": [
+        0,
+        0
+      ],
+      "flashinfer_cubin": "0.7.3",
+      "flashinfer_jit_cache": "0.7.3+cu130",
+      "manager": "NixlEPAll2AllManager",
+      "cache_mode": "align",
+      "block_size": 768,
+      "mamba_groups": [
+        {
+          "type": "GDN_ATTN",
+          "block_size": 768,
+          "checkpoints": 1,
+          "checkpoint_alignment": 768,
+          "layers": 12
+        },
+        {
+          "type": "GDN_ATTN",
+          "block_size": 768,
+          "checkpoints": 1,
+          "checkpoint_alignment": 768,
+          "layers": 12
+        },
+        {
+          "type": "GDN_ATTN",
+          "block_size": 768,
+          "checkpoints": 1,
+          "checkpoint_alignment": 768,
+          "layers": 12
+        }
+      ],
+      "scheduler_mamba_internal_checkpoints": true,
+      "scheduler_hash_block_size": 768,
+      "scheduler_partial_cache_hit": false,
+      "effective_cg_mode": "FULL_DECODE_ONLY",
+      "graphs": [
+        {
+          "mode": "FULL",
+          "padded_tokens": 32,
+          "padded_requests": 32,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 32,
+          "padded_requests": 32,
+          "uniform_tokens": 1,
+          "ubatches": 2
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 16,
+          "padded_requests": 16,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 16,
+          "padded_requests": 16,
+          "uniform_tokens": 1,
+          "ubatches": 2
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 8,
+          "padded_requests": 8,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 8,
+          "padded_requests": 8,
+          "uniform_tokens": 1,
+          "ubatches": 2
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 4,
+          "padded_requests": 4,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 4,
+          "padded_requests": 4,
+          "uniform_tokens": 1,
+          "ubatches": 2
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 2,
+          "padded_requests": 2,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 2,
+          "padded_requests": 2,
+          "uniform_tokens": 1,
+          "ubatches": 2
+        },
+        {
+          "mode": "FULL",
+          "padded_tokens": 1,
+          "padded_requests": 1,
+          "uniform_tokens": 1,
+          "ubatches": 1
+        }
+      ],
+      "startup_nixl_ep_calls": {
+        "dispatch": 1968,
+        "combine": 1968
+      },
+      "capture_nixl_ep_calls": {
+        "dispatch": 768,
+        "combine": 768
+      }
+    },
+    "prefix_hit_vs_cold": {
+      "off": {
+        "n": 8,
+        "equal": 0,
+        "p50": 0.024240493774414062,
+        "p95": 0.07911300659179688,
+        "p99": 0.07911300659179688,
+        "max": 0.07911300659179688,
+        "over_0.05": 2,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "on": {
+        "n": 8,
+        "equal": 0,
+        "p50": 0.043854713439941406,
+        "p95": 0.12304115295410156,
+        "p99": 0.12304115295410156,
+        "max": 0.12304115295410156,
+        "over_0.05": 3,
+        "over_0.10": 1,
+        "over_0.25": 0,
+        "over_1.00": 0
+      }
+    },
+    "requests_per_arm": 410,
+    "greedy_requests": 24,
+    "greedy_differing_requests": 5,
+    "greedy_differences_outside_other_top5": 0,
+    "sample_logprob": {
+      "n": 1632,
+      "equal": 0,
+      "p50": 0.054472923278808594,
+      "p95": 0.24804306030273438,
+      "p99": 0.40317630767822266,
+      "max": 0.6721954345703125,
+      "over_0.05": 867,
+      "over_0.10": 441,
+      "over_0.25": 81,
+      "over_1.00": 0
+    },
+    "prompt_logprob": {
+      "n": 4270,
+      "equal": 0,
+      "p50": 0.026494979858398438,
+      "p95": 0.10399913787841797,
+      "p99": 0.18070507049560547,
+      "max": 0.4027061462402344,
+      "over_0.05": 1052,
+      "over_0.10": 237,
+      "over_0.25": 17,
+      "over_1.00": 0
+    },
+    "coverage_errors": []
+  }
+}

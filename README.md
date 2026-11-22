@@ -91,7 +91,7 @@ uv run --offline --no-project --python .venv/bin/python .venv/bin/python -m pyte
 | GDN 实权重 A/B | `Intel/Qwen3-Next-80B-A3B-Instruct-int4-AutoRound`，W4A16，权重文件合计约 40.3 GiB。在大显存机器上确认量化专家 kernel 与 EP 后端的组合。[Intel 模型文件](https://huggingface.co/Intel/Qwen3-Next-80B-A3B-Instruct-int4-AutoRound/tree/main) |
 | Mamba2 实权重 A/B | `ibm-granite/granite-4.0-h-tiny`，BF16，权重文件合计约 12.9 GiB。用同一权重 revision 在上游 EP 后端做正式 A/B。[IBM 模型卡](https://huggingface.co/ibm-granite/granite-4.0-h-tiny) |
 
-以上三套模型的配置已通过本分支 `DP=2、TP=1、EP、DBO` 下 `none` 和 `align` 的检查。双卡通信、真实权重端到端执行和性能仍待测试。A800 的 EP 镜像需要能运行 SM80，当前默认锁定的 DeepEP 提交在 SM80 构建分支会报 `Not implemented`。`deepep_high_throughput` 可作为兼容环境上的 eager 测试后端。验证 FULL replay 时选择支持图捕获的后端。[DeepEP 构建配置](https://github.com/deepseek-ai/DeepEP/blob/a56d6156febcd9976e55adc85b5155bfac9f28f8/setup.py#L130-L139) · [vLLM 图模式配置][ep-cg]
+以上三套模型的配置已通过本分支 `DP=2、TP=1、EP、DBO` 下 `none` 和 `align` 的检查。双 H100 上的实权重回归、性能 A/B 和 Granite 8192-token 诊断见 [H100 验证记录](experiments/h100_hybrid_dbo/README.md)。A800 的 EP 镜像需要能运行 SM80，当前默认锁定的 DeepEP 提交在 SM80 构建分支会报 `Not implemented`。`deepep_high_throughput` 可作为兼容环境上的 eager 测试后端。验证 FULL replay 时选择支持图捕获的后端。[DeepEP 构建配置](https://github.com/deepseek-ai/DeepEP/blob/a56d6156febcd9976e55adc85b5155bfac9f28f8/setup.py#L130-L139) · [vLLM 图模式配置][ep-cg]
 
 1. **正确性。** 两种实模型各跑 `none` 和 `align`。每组固定权重 revision、精度、缓存预算、scheduler、attention 与 EP 后端，比较 DBO 开关。选择无需内部 checkpoint 的混合步，让切点落在长 prefill 请求内部，同时推进已有的 decode 请求。确认 `num_ubatches=2`，比较有效 token 的 logprobs、后续 decode，以及 `align` 下已有 prefix 的复用。
 2. **双卡边界。** 覆盖一侧 ubatch 全 padding、DP token 数不均以及内部 checkpoint 触发整步退路。FULL 验证记录 capture 和 replay，检查不同有效请求数下两片的输出与状态。

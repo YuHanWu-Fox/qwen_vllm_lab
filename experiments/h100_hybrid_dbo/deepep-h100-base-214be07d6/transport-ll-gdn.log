@@ -1,0 +1,14 @@
+WARN `--no-project` was provided, but no project was found
+Allocating buffer size: 272.633984 MB ...
+/dvs/p4/build/sw/rel/gpgpu/toolkit/r13.0/main_nvshmem/src/host/transport/transport.cpp:nvshmemi_transport_init:282: init failed for transport: IBGDA
+/dvs/p4/build/sw/rel/gpgpu/toolkit/r13.0/main_nvshmem/src/host/transport/transport.cpp:nvshmemi_transport_init:282: init failed for transport: IBGDA
+/workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+/workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+[rank 0] Dispatch + combine bandwidth: 10.36 GB/s, avg_t=186.15 us, min_t=179.78 us, max_t=203.33 us
+[rank 1] Dispatch + combine bandwidth: 10.33 GB/s, avg_t=186.72 us, min_t=180.29 us, max_t=204.86 us
+[rank 0] Dispatch bandwidth: 11.02 GB/s, avg_t=59.86 us | Combine bandwidth: 11.00 GB/s, avg_t=115.42 us
+[rank 1] Dispatch bandwidth: 10.98 GB/s, avg_t=60.10 us | Combine bandwidth: 11.02 GB/s, avg_t=115.24 us
+[rank 0] Dispatch send/recv time: 55.19 + 4.45 us | Combine send/recv time: 96.06 + 7.50 us
+[rank 1] Dispatch send/recv time: 55.24 + 4.48 us | Combine send/recv time: 51.04 + 7.65 us

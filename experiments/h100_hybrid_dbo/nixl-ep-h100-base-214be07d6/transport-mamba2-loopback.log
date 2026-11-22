@@ -1,0 +1,208 @@
+I1122 20:39:52.415872  107658 nixl_log.cpp:80] NIXL version: 1.5.2 (git: e72c52c7)
+I1122 20:39:52.422383  107657 nixl_log.cpp:80] NIXL version: 1.5.2 (git: e72c52c7)
+rank 0 Gloo store ready
+rank 1 Gloo store ready
+rank 0 Buffer object ready
+rank 1 Buffer object ready
+I1122 20:39:53.666770  107657 configuration.cpp:98] Missing environment variable NIXL_CONFIG_FILE
+I1122 20:39:53.666811  107657 configuration.cpp:95] Found environment variable HOME
+I1122 20:39:53.666862  107657 configuration.cpp:59] Config file "/root/.nixl.cfg" does not exist
+I1122 20:39:53.666885  107657 configuration.cpp:69] Config file "/etc/nixl.cfg" does not exist
+I1122 20:39:53.666890  107657 configuration.cpp:73] Using empty config without config file
+I1122 20:39:53.666894  107657 configuration.cpp:119] Missing config file entry 'NIXL_TCPSTORE_ENDPOINT'
+I1122 20:39:53.666900  107657 configuration.cpp:119] Missing config file entry 'NIXL_ETCD_ENDPOINTS'
+I1122 20:39:53.666907  107657 configuration.cpp:98] Missing environment variable NIXL_TRACE_BACKENDS
+I1122 20:39:53.666911  107657 configuration.cpp:119] Missing config file entry 'NIXL_TRACE_BACKENDS'
+I1122 20:39:53.666916  107657 configuration.cpp:119] Missing config file entry 'NVTX_INJECTION64_PATH'
+I1122 20:39:53.666921  107657 configuration.cpp:98] Missing environment variable NIXL_TELEMETRY_ENABLE
+I1122 20:39:53.666925  107657 configuration.cpp:119] Missing config file entry 'NIXL_TELEMETRY_ENABLE'
+I1122 20:39:53.666937  107657 configuration.cpp:98] Missing environment variable NIXL_PLUGIN_DIR
+I1122 20:39:53.666941  107657 configuration.cpp:119] Missing config file entry 'NIXL_PLUGIN_DIR'
+I1122 20:39:53.666940  107658 configuration.cpp:98] Missing environment variable NIXL_CONFIG_FILE
+I1122 20:39:53.666972  107658 configuration.cpp:95] Found environment variable HOME
+I1122 20:39:53.666990  107657 nixl_plugin_manager.cpp:413] Loading plugins from: /workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/nixl_ep_cu13/../.nixl_cu13.mesonpy.libs/plugins
+I1122 20:39:53.667009  107658 configuration.cpp:59] Config file "/root/.nixl.cfg" does not exist
+I1122 20:39:53.667025  107658 configuration.cpp:69] Config file "/etc/nixl.cfg" does not exist
+I1122 20:39:53.667030  107658 configuration.cpp:73] Using empty config without config file
+I1122 20:39:53.667035  107658 configuration.cpp:119] Missing config file entry 'NIXL_TCPSTORE_ENDPOINT'
+I1122 20:39:53.667041  107658 configuration.cpp:119] Missing config file entry 'NIXL_ETCD_ENDPOINTS'
+I1122 20:39:53.667047  107658 configuration.cpp:98] Missing environment variable NIXL_TRACE_BACKENDS
+I1122 20:39:53.667050  107658 configuration.cpp:119] Missing config file entry 'NIXL_TRACE_BACKENDS'
+I1122 20:39:53.667055  107658 configuration.cpp:119] Missing config file entry 'NVTX_INJECTION64_PATH'
+I1122 20:39:53.667059  107658 configuration.cpp:98] Missing environment variable NIXL_TELEMETRY_ENABLE
+I1122 20:39:53.667062  107658 configuration.cpp:119] Missing config file entry 'NIXL_TELEMETRY_ENABLE'
+I1122 20:39:53.667073  107658 configuration.cpp:98] Missing environment variable NIXL_PLUGIN_DIR
+I1122 20:39:53.667077  107658 configuration.cpp:119] Missing config file entry 'NIXL_PLUGIN_DIR'
+I1122 20:39:53.667073  107657 nixl_plugin_manager.cpp:623] Discovered backend plugin: AZURE_BLOB
+I1122 20:39:53.667086  107657 nixl_plugin_manager.cpp:623] Discovered backend plugin: GDS
+I1122 20:39:53.667091  107657 nixl_plugin_manager.cpp:623] Discovered backend plugin: GDS_MT
+I1122 20:39:53.667096  107657 nixl_plugin_manager.cpp:623] Discovered backend plugin: GPUNETIO
+I1122 20:39:53.667101  107657 nixl_plugin_manager.cpp:623] Discovered backend plugin: GUSLI
+I1122 20:39:53.667105  107657 nixl_plugin_manager.cpp:623] Discovered backend plugin: INFINIA
+I1122 20:39:53.667110  107657 nixl_plugin_manager.cpp:623] Discovered backend plugin: LIBFABRIC
+I1122 20:39:53.667116  107657 nixl_plugin_manager.cpp:623] Discovered backend plugin: OBJ
+I1122 20:39:53.667120  107657 nixl_plugin_manager.cpp:623] Discovered backend plugin: POSIX
+I1122 20:39:53.667125  107657 nixl_plugin_manager.cpp:623] Discovered backend plugin: UCX
+I1122 20:39:53.667129  107658 nixl_plugin_manager.cpp:413] Loading plugins from: /workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/nixl_ep_cu13/../.nixl_cu13.mesonpy.libs/plugins
+I1122 20:39:53.667143  107657 nixl_plugin_manager.cpp:632] Discovered telemetry plugin: doca
+I1122 20:39:53.667149  107657 nixl_plugin_manager.cpp:632] Discovered telemetry plugin: prometheus
+I1122 20:39:53.667153  107657 nixl_plugin_manager.cpp:632] Discovered telemetry plugin: prometheus_mp
+I1122 20:39:53.667158  107657 nixl_plugin_manager.cpp:640] Discovered trace plugin: nvtx
+I1122 20:39:53.667177  107657 nixl_plugin_manager.cpp:798] Loading static plugin: BUFFER
+I1122 20:39:53.667185  107657 nixl_plugin_manager.cpp:798] Loading static plugin: NOP
+I1122 20:39:53.667189  107658 nixl_plugin_manager.cpp:623] Discovered backend plugin: AZURE_BLOB
+I1122 20:39:53.667200  107658 nixl_plugin_manager.cpp:623] Discovered backend plugin: GDS
+I1122 20:39:53.667203  107657 configuration.cpp:98] Missing environment variable NIXL_UCX_DEEPBIND
+I1122 20:39:53.667205  107658 nixl_plugin_manager.cpp:623] Discovered backend plugin: GDS_MT
+I1122 20:39:53.667207  107657 configuration.cpp:119] Missing config file entry 'NIXL_UCX_DEEPBIND'
+I1122 20:39:53.667210  107658 nixl_plugin_manager.cpp:623] Discovered backend plugin: GPUNETIO
+I1122 20:39:53.667215  107658 nixl_plugin_manager.cpp:623] Discovered backend plugin: GUSLI
+I1122 20:39:53.667219  107658 nixl_plugin_manager.cpp:623] Discovered backend plugin: INFINIA
+I1122 20:39:53.667224  107658 nixl_plugin_manager.cpp:623] Discovered backend plugin: LIBFABRIC
+I1122 20:39:53.667228  107658 nixl_plugin_manager.cpp:623] Discovered backend plugin: OBJ
+I1122 20:39:53.667233  107658 nixl_plugin_manager.cpp:623] Discovered backend plugin: POSIX
+I1122 20:39:53.667237  107658 nixl_plugin_manager.cpp:623] Discovered backend plugin: UCX
+I1122 20:39:53.667242  107658 nixl_plugin_manager.cpp:632] Discovered telemetry plugin: doca
+I1122 20:39:53.667247  107658 nixl_plugin_manager.cpp:632] Discovered telemetry plugin: prometheus
+I1122 20:39:53.667251  107658 nixl_plugin_manager.cpp:632] Discovered telemetry plugin: prometheus_mp
+I1122 20:39:53.667256  107658 nixl_plugin_manager.cpp:640] Discovered trace plugin: nvtx
+I1122 20:39:53.667271  107658 nixl_plugin_manager.cpp:798] Loading static plugin: BUFFER
+I1122 20:39:53.667277  107658 nixl_plugin_manager.cpp:798] Loading static plugin: NOP
+I1122 20:39:53.667291  107658 configuration.cpp:98] Missing environment variable NIXL_UCX_DEEPBIND
+I1122 20:39:53.667294  107658 configuration.cpp:119] Missing config file entry 'NIXL_UCX_DEEPBIND'
+I1122 20:39:53.668354  107658 ucx_plugin.cpp:51] NIXL UCX backend bound to UCX 1.23.0 at /workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/nixl_ep_cu13/../nixl_cu13.libs/libucp-b39b3ed9.so.0.0.0
+I1122 20:39:53.668386  107658 configuration.cpp:98] Missing environment variable NIXL_UCX_EXPECTED_SONAME
+I1122 20:39:53.668390  107658 configuration.cpp:119] Missing config file entry 'NIXL_UCX_EXPECTED_SONAME'
+I1122 20:39:53.668424  107658 configuration.cpp:98] Missing environment variable NIXL_UCX_DEEPBIND
+I1122 20:39:53.668428  107658 configuration.cpp:119] Missing config file entry 'NIXL_UCX_DEEPBIND'
+I1122 20:39:53.668449  107658 ucx_plugin.cpp:51] NIXL UCX backend bound to UCX 1.23.0 at /workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/nixl_ep_cu13/../nixl_cu13.libs/libucp-b39b3ed9.so.0.0.0
+I1122 20:39:53.668453  107658 configuration.cpp:98] Missing environment variable NIXL_UCX_EXPECTED_SONAME
+I1122 20:39:53.668456  107658 configuration.cpp:119] Missing config file entry 'NIXL_UCX_EXPECTED_SONAME'
+I1122 20:39:53.668466  107658 configuration.cpp:98] Missing environment variable NIXL_UCX_SGL_ENABLE
+I1122 20:39:53.668470  107658 configuration.cpp:119] Missing config file entry 'NIXL_UCX_SGL_ENABLE'
+I1122 20:39:53.668474  107658 ucx_backend.cpp:41] UCX SGL offload disabled
+I1122 20:39:53.668960  107657 ucx_plugin.cpp:51] NIXL UCX backend bound to UCX 1.23.0 at /workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/nixl_ep_cu13/../nixl_cu13.libs/libucp-b39b3ed9.so.0.0.0
+I1122 20:39:53.668988  107657 configuration.cpp:98] Missing environment variable NIXL_UCX_EXPECTED_SONAME
+I1122 20:39:53.668993  107657 configuration.cpp:119] Missing config file entry 'NIXL_UCX_EXPECTED_SONAME'
+I1122 20:39:53.669018  107657 configuration.cpp:98] Missing environment variable NIXL_UCX_DEEPBIND
+I1122 20:39:53.669021  107657 configuration.cpp:119] Missing config file entry 'NIXL_UCX_DEEPBIND'
+I1122 20:39:53.669048  107657 ucx_plugin.cpp:51] NIXL UCX backend bound to UCX 1.23.0 at /workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/nixl_ep_cu13/../nixl_cu13.libs/libucp-b39b3ed9.so.0.0.0
+I1122 20:39:53.669052  107657 configuration.cpp:98] Missing environment variable NIXL_UCX_EXPECTED_SONAME
+I1122 20:39:53.669056  107657 configuration.cpp:119] Missing config file entry 'NIXL_UCX_EXPECTED_SONAME'
+I1122 20:39:53.669065  107657 configuration.cpp:98] Missing environment variable NIXL_UCX_SGL_ENABLE
+I1122 20:39:53.669072  107657 configuration.cpp:119] Missing config file entry 'NIXL_UCX_SGL_ENABLE'
+I1122 20:39:53.669077  107657 ucx_backend.cpp:41] UCX SGL offload disabled
+I1122 20:39:53.673712  107657 configuration.cpp:98] Missing environment variable UCX_RNDV_THRESH
+I1122 20:39:53.673731  107658 configuration.cpp:98] Missing environment variable UCX_RNDV_THRESH
+I1122 20:39:53.673765  107657 config.cpp:69] Modified UCX config: RNDV_THRESH=inf
+I1122 20:39:53.673772  107657 configuration.cpp:98] Missing environment variable UCX_MAX_RMA_RAILS
+I1122 20:39:53.673773  107658 config.cpp:69] Modified UCX config: RNDV_THRESH=inf
+I1122 20:39:53.673779  107658 configuration.cpp:98] Missing environment variable UCX_MAX_RMA_RAILS
+I1122 20:39:53.673799  107657 config.cpp:69] Modified UCX config: MAX_RMA_RAILS=2
+I1122 20:39:53.673803  107657 configuration.cpp:98] Missing environment variable UCX_IB_PCI_RELAXED_ORDERING
+I1122 20:39:53.673806  107658 config.cpp:69] Modified UCX config: MAX_RMA_RAILS=2
+I1122 20:39:53.673810  107658 configuration.cpp:98] Missing environment variable UCX_IB_PCI_RELAXED_ORDERING
+I1122 20:39:53.673952  107657 config.cpp:69] Modified UCX config: IB_PCI_RELAXED_ORDERING=try
+I1122 20:39:53.673953  107658 config.cpp:69] Modified UCX config: IB_PCI_RELAXED_ORDERING=try
+I1122 20:39:53.673957  107657 configuration.cpp:98] Missing environment variable UCX_RC_FENCE
+I1122 20:39:53.673959  107658 configuration.cpp:98] Missing environment variable UCX_RC_FENCE
+I1122 20:39:53.674095  107657 config.cpp:69] Modified UCX config: RC_FENCE=none
+I1122 20:39:53.674096  107658 config.cpp:69] Modified UCX config: RC_FENCE=none
+I1122 20:39:53.674101  107657 configuration.cpp:98] Missing environment variable UCX_RC_GDA_NUM_CHANNELS
+I1122 20:39:53.674102  107658 configuration.cpp:98] Missing environment variable UCX_RC_GDA_NUM_CHANNELS
+I1122 20:39:53.674479  107657 config.cpp:69] Modified UCX config: RC_GDA_NUM_CHANNELS=4
+I1122 20:39:53.674479  107658 config.cpp:69] Modified UCX config: RC_GDA_NUM_CHANNELS=4
+I1122 20:39:53.674483  107657 configuration.cpp:98] Missing environment variable UCX_MAX_HCA_PER_GPU
+I1122 20:39:53.674486  107658 configuration.cpp:98] Missing environment variable UCX_MAX_HCA_PER_GPU
+I1122 20:39:53.674509  107657 config.cpp:69] Modified UCX config: MAX_HCA_PER_GPU=auto
+I1122 20:39:53.674511  107658 config.cpp:69] Modified UCX config: MAX_HCA_PER_GPU=auto
+I1122 20:39:53.674514  107657 configuration.cpp:98] Missing environment variable UCX_RNDV_PIPELINE_ERROR_HANDLING
+I1122 20:39:53.674516  107658 configuration.cpp:98] Missing environment variable UCX_RNDV_PIPELINE_ERROR_HANDLING
+I1122 20:39:53.674541  107657 config.cpp:69] Modified UCX config: RNDV_PIPELINE_ERROR_HANDLING=y
+I1122 20:39:53.674544  107658 config.cpp:69] Modified UCX config: RNDV_PIPELINE_ERROR_HANDLING=y
+I1122 20:39:53.674546  107657 configuration.cpp:98] Missing environment variable UCX_IB_AH_CACHE_TTL
+I1122 20:39:53.674549  107658 configuration.cpp:98] Missing environment variable UCX_IB_AH_CACHE_TTL
+I1122 20:39:53.674666  107657 config.cpp:69] Modified UCX config: IB_AH_CACHE_TTL=0
+I1122 20:39:53.674676  107658 config.cpp:69] Modified UCX config: IB_AH_CACHE_TTL=0
+I1122 20:39:53.674950  107658 hw_info.cpp:123] Found NVIDIA GPU #1: 0000:03:00.0 vendor=0x0x10de class=0x0x302
+I1122 20:39:53.674950  107657 hw_info.cpp:123] Found NVIDIA GPU #1: 0000:03:00.0 vendor=0x0x10de class=0x0x302
+I1122 20:39:53.677618  107658 hw_info.cpp:123] Found NVIDIA GPU #2: 0000:e4:00.0 vendor=0x0x10de class=0x0x302
+I1122 20:39:53.677618  107657 hw_info.cpp:123] Found NVIDIA GPU #2: 0000:e4:00.0 vendor=0x0x10de class=0x0x302
+I1122 20:39:53.678835  107657 hw_info.cpp:123] Found NVIDIA GPU #3: 0000:e3:00.0 vendor=0x0x10de class=0x0x302
+I1122 20:39:53.678836  107658 hw_info.cpp:123] Found NVIDIA GPU #3: 0000:e3:00.0 vendor=0x0x10de class=0x0x302
+I1122 20:39:53.680621  107658 hw_info.cpp:123] Found NVIDIA GPU #4: 0000:04:00.0 vendor=0x0x10de class=0x0x302
+I1122 20:39:53.680632  107657 hw_info.cpp:123] Found NVIDIA GPU #4: 0000:04:00.0 vendor=0x0x10de class=0x0x302
+I1122 20:39:53.681633  107657 hw_info.cpp:146] hwInfo { numNvidiaGpus=4, numAmdGpus=0, numIbDevices=0, numEfaDevices=0 }
+I1122 20:39:53.681633  107658 hw_info.cpp:146] hwInfo { numNvidiaGpus=4, numAmdGpus=0, numIbDevices=0, numEfaDevices=0 }
+I1122 20:39:53.681650  107657 configuration.cpp:95] Found environment variable UCX_TLS
+I1122 20:39:53.681651  107658 configuration.cpp:95] Found environment variable UCX_TLS
+[1795379993.681678] [h100-test-host:107657:0]     ucp_context.c:2753 UCX  INFO  Version 1.23.0 (loaded from /workspace/qwen_vllm_l[1795379993.681678] [h100-test-host:107658:0]     ucp_context.c:2753 UCX  INFO  Version 1.23.0 (loaded from /workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/nixl_ep_cu13/../nixl_cu13.libs/libucp-b39b3ed9.so.0.0.0, git branch <unknown>, ab/vllm-v0.33/.venv/lib/python3.12/site-packages/nixl_ep_cu13/../nixl_cu13.libs/libucp-b39b3ed9.so.0.0.0, git branch <unknown>, revision 65e342a)
+revision 65e342a)
+[1795379994.526918] [h100-test-host:107657:0]          parser.c:2587 UCX  INFO  UCX_* env variables: UCX_LOG_LEVEL=info UCX_NET_DEVICES=lo UCX_TLS=tcp,cuda_copy,cuda_ipc,self
+I1122 20:39:54.526984  107657 ucx_utils.cpp:608] nixlUcxWorker 0:0: created ucp worker 0x3a4de2d0
+I1122 20:39:54.527074  107657 ucx_utils.cpp:756] nixlUcxWorker 0:0: registered AM callback for NOTIF_STR
+I1122 20:39:54.527603  107682 ucx_backend.cpp:321] shared thread 0x3a52d860{engine: 0x3a4bd810, worker_ids: [0]} running
+[1795379994.527719] [h100-test-host:107657:0]      ucp_worker.c:1997 UCX  INFO    0 self cfg#1 rma(self/memory)  amo(self/memory)  am(self/memory cuda_copy/cuda)
+I1122 20:39:54.530038  107657 ucx_utils.cpp:114] ep 0x7f4ea006f080: state UNINITIALIZED -> CONNECTED
+I1122 20:39:54.530060  107657 ucx_utils.cpp:631] nixlUcxWorker 0:0: created ep 0x7f4ea006f080
+I1122 20:39:54.530081  107657 nixl_agent.cpp:400] Created backend: UCX
+I1122 20:39:54.530366  107657 ucx_utils.cpp:683] nixlUcxContext 0: registered 34079872 bytes at 0x7f4c58000000, memh 0x3a5f1af0
+I1122 20:39:54.531595  107657 ucx_utils.cpp:700] nixlUcxContext 0: packed rkey of 225 bytes for memh 0x3a5f1af0
+I1122 20:39:54.531786  107657 ucx_utils.cpp:683] nixlUcxContext 0: registered 8 bytes at 0x7f4c5a200200, memh 0x3a55db30
+I1122 20:39:54.532063  107657 ucx_utils.cpp:700] nixlUcxContext 0: packed rkey of 225 bytes for memh 0x3a55db30
+I1122 20:39:54.532172  107657 ucx_utils.cpp:683] nixlUcxContext 0: registered 8 bytes at 0x7f4c5a200400, memh 0x3a55e1b0
+I1122 20:39:54.532435  107657 ucx_utils.cpp:700] nixlUcxContext 0: packed rkey of 225 bytes for memh 0x3a55e1b0
+rank 0 buffer memory ready
+[1795379994.534166] [h100-test-host:107658:0]          parser.c:2587 UCX  INFO  UCX_* env variables: UCX_LOG_LEVEL=info UCX_NET_DEVICES=lo UCX_TLS=tcp,cuda_copy,cuda_ipc,self
+I1122 20:39:54.534246  107658 ucx_utils.cpp:608] nixlUcxWorker 1:0: created ucp worker 0x3386b440
+I1122 20:39:54.534318  107658 ucx_utils.cpp:756] nixlUcxWorker 1:0: registered AM callback for NOTIF_STR
+I1122 20:39:54.534763  107683 ucx_backend.cpp:321] shared thread 0x338ba9d0{engine: 0x3384a8a0, worker_ids: [0]} running
+[1795379994.534890] [h100-test-host:107658:0]      ucp_worker.c:1997 UCX  INFO    1 self cfg#1 rma(self/memory)  amo(self/memory)  am(self/memory cuda_copy/cuda)
+I1122 20:39:54.537134  107658 ucx_utils.cpp:114] ep 0x7f18903c0080: state UNINITIALIZED -> CONNECTED
+I1122 20:39:54.537151  107658 ucx_utils.cpp:631] nixlUcxWorker 1:0: created ep 0x7f18903c0080
+I1122 20:39:54.537169  107658 nixl_agent.cpp:400] Created backend: UCX
+I1122 20:39:54.537336  107658 ucx_utils.cpp:683] nixlUcxContext 1: registered 34079872 bytes at 0x7f164a000000, memh 0x3397f140
+I1122 20:39:54.537590  107658 ucx_utils.cpp:700] nixlUcxContext 1: packed rkey of 225 bytes for memh 0x3397f140
+I1122 20:39:54.537780  107658 ucx_utils.cpp:683] nixlUcxContext 1: registered 8 bytes at 0x7f164c200200, memh 0x338eb180
+I1122 20:39:54.537977  107658 ucx_utils.cpp:700] nixlUcxContext 1: packed rkey of 225 bytes for memh 0x338eb180
+I1122 20:39:54.538084  107658 ucx_utils.cpp:683] nixlUcxContext 1: registered 8 bytes at 0x7f164c200400, memh 0x338eb960
+I1122 20:39:54.538265  107658 ucx_utils.cpp:700] nixlUcxContext 1: packed rkey of 225 bytes for memh 0x338eb960
+rank 1 buffer memory ready
+I1122 20:39:54.538945  107658 nixl_agent.cpp:1638] Loading remote metadata for agent: 0
+[1795379994.539319] [h100-test-host:107658:0]      ucp_worker.c:1997 UCX  INFO    1 intra-node cfg#2 rma_am(tcp/lo)  amo_am(tcp/lo)  device(cuda_ipc/cuda)  am(tcp/lo cuda_ipc/cuda)
+I1122 20:39:54.539736  107657 nixl_agent.cpp:1638] Loading remote metadata for agent: 1
+[1795379994.540406] [h100-test-host:107657:0]      ucp_worker.c:1997 UCX  INFO    0 intra-node cfg#2 rma_am(tcp/lo)  amo_am(tcp/lo)  device(cuda_ipc/cuda)  am(tcp/lo cuda_ipc/cuda)
+I1122 20:39:54.569265  107658 ucx_utils.cpp:114] ep 0x7f18903c00c0: state UNINITIALIZED -> CONNECTED
+I1122 20:39:54.569305  107658 ucx_utils.cpp:631] nixlUcxWorker 1:0: created ep 0x7f18903c00c0
+I1122 20:39:54.570447  107657 ucx_utils.cpp:114] ep 0x7f4ea006f0c0: state UNINITIALIZED -> CONNECTED
+I1122 20:39:54.570506  107657 ucx_utils.cpp:631] nixlUcxWorker 0:0: created ep 0x7f4ea006f0c0
+I1122 20:39:54.616320  107658 ucx_backend.cpp:1020] engine 0x3384a8a0 bound shared worker 0 to thread 139747025483584
+I1122 20:39:54.632875  107657 ucx_backend.cpp:1020] engine 0x3a4bd810 bound shared worker 0 to thread 139979201963840
+I1122 20:39:54.635162  107657 nixl_agent.cpp:1983] Selected backend: UCX
+I1122 20:39:54.635174  107658 nixl_agent.cpp:1983] Selected backend: UCX
+I1122 20:39:54.636095  107658 nixl_agent.cpp:1935] Selected backend: UCX
+I1122 20:39:54.636116  107658 configuration.cpp:98] Missing environment variable NIXL_UCX_WARNING_TIMEOUT
+I1122 20:39:54.636124  107658 configuration.cpp:119] Missing config file entry 'NIXL_UCX_WARNING_TIMEOUT'
+I1122 20:39:54.636161  107657 nixl_agent.cpp:1935] Selected backend: UCX
+I1122 20:39:54.636186  107657 configuration.cpp:98] Missing environment variable NIXL_UCX_WARNING_TIMEOUT
+I1122 20:39:54.636194  107657 configuration.cpp:119] Missing config file entry 'NIXL_UCX_WARNING_TIMEOUT'
+I1122 20:39:54.636577  107658 nixl_agent.cpp:1935] Selected backend: UCX
+I1122 20:39:54.636593  107658 configuration.cpp:98] Missing environment variable NIXL_UCX_WARNING_TIMEOUT
+I1122 20:39:54.636598  107658 configuration.cpp:119] Missing config file entry 'NIXL_UCX_WARNING_TIMEOUT'
+I1122 20:39:54.636639  107657 nixl_agent.cpp:1935] Selected backend: UCX
+I1122 20:39:54.636659  107657 configuration.cpp:98] Missing environment variable NIXL_UCX_WARNING_TIMEOUT
+I1122 20:39:54.636664  107657 configuration.cpp:119] Missing config file entry 'NIXL_UCX_WARNING_TIMEOUT'
+rank 1 connected experts=64 topk=6 max_tokens=32 bytes=34079872
+rank 0 connected experts=64 topk=6 max_tokens=32 bytes=34079872
+rank 0 eager cross-rank round trip exactrank 1 eager cross-rank round trip exact
+
+rank 1 two FULL graph replays exactrank 0 two FULL graph replays exact
+
+I1122 20:39:55.549564  107658 ucx_utils.cpp:706] nixlUcxContext 1: deregistering 34079872 bytes at 0x7f164a000000, memh 0x3397f140
+I1122 20:39:55.549571  107657 ucx_utils.cpp:706] nixlUcxContext 0: deregistering 34079872 bytes at 0x7f4c58000000, memh 0x3a5f1af0
+I1122 20:39:55.549625  107658 ucx_utils.cpp:706] nixlUcxContext 1: deregistering 8 bytes at 0x7f164c200200, memh 0x338eb180
+I1122 20:39:55.549634  107657 ucx_utils.cpp:706] nixlUcxContext 0: deregistering 8 bytes at 0x7f4c5a200200, memh 0x3a55db30
+I1122 20:39:55.549636  107658 ucx_utils.cpp:706] nixlUcxContext 1: deregistering 8 bytes at 0x7f164c200400, memh 0x338eb960
+I1122 20:39:55.549646  107657 ucx_utils.cpp:706] nixlUcxContext 0: deregistering 8 bytes at 0x7f4c5a200400, memh 0x3a55e1b0
+I1122 20:39:55.549693  107683 ucx_backend.cpp:353] shared thread 0x338ba9d0{engine: 0x3384a8a0, worker_ids: [0]} exiting
+I1122 20:39:55.549707  107682 ucx_backend.cpp:353] shared thread 0x3a52d860{engine: 0x3a4bd810, worker_ids: [0]} exiting

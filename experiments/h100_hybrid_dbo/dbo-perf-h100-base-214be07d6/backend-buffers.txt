@@ -1,0 +1,15 @@
+Tokens per DP rank and communication-buffer GiB per GPU from installed backend APIs
+experts=64 width=1536
+ 2048 DeepEP LL   1.52 NIXL   1.52 min QP depth 4098
+ 4096 DeepEP LL   3.05 NIXL   3.05 min QP depth 8194
+ 8192 DeepEP LL   6.09 NIXL   6.09 min QP depth 16386
+16384 DeepEP LL  12.19 NIXL  12.19 min QP depth 32770
+32768 DeepEP LL  24.38 NIXL  24.38 min QP depth 65538
+32786 DeepEP LL  24.39 NIXL  24.39 min QP depth 65574
+experts=512 width=2048
+ 2048 DeepEP LL  16.25 NIXL  16.25 min QP depth 4098
+ 4096 DeepEP LL  32.50 NIXL  32.50 min QP depth 8194
+ 8192 DeepEP LL  65.00 NIXL  65.00 min QP depth 16386
+16384 DeepEP LL 130.00 NIXL 130.00 min QP depth 32770
+32768 DeepEP LL 260.00 NIXL 260.00 min QP depth 65538
+32786 DeepEP LL 260.14 NIXL 260.14 min QP depth 65574

@@ -1,0 +1,86 @@
+WARN `--no-project` was provided, but no project was found
+[config] num_tokens=64, hidden=1536, num_topk=6
+[layout] Kernel performance: 0.008 ms
+
+[testing] Running with BF16, without top-k (async=False, previous=False) ... passed
+[testing] Running with BF16, with top-k (async=False, previous=False) ... passed
+[testing] Running with BF16, without top-k (async=False, previous=False) ... passed
+[testing] Running with BF16, with top-k (async=False, previous=False) ... passed
+[testing] Running with FP8, without top-k (async=False, previous=False) ... passed
+[testing] Running with FP8, with top-k (async=False, previous=False) ... passed
+[testing] Running with BF16, without top-k (async=True, previous=False) ... passed
+[testing] Running with BF16, with top-k (async=True, previous=False) ... passed
+[testing] Running with BF16, without top-k (async=True, previous=False) ... passed
+[testing] Running with BF16, with top-k (async=True, previous=False) ... passed
+[testing] Running with FP8, without top-k (async=True, previous=False) ... passed
+[testing] Running with FP8, with top-k (async=True, previous=False) ... passed
+[testing] Running with BF16, without top-k (async=False, previous=True) ... passed
+[testing] Running with BF16, with top-k (async=False, previous=True) ... passed
+[testing] Running with BF16, without top-k (async=False, previous=True) ... passed
+[testing] Running with BF16, with top-k (async=False, previous=True) ... passed
+[testing] Running with FP8, without top-k (async=False, previous=True) ... passed
+[testing] Running with FP8, with top-k (async=False, previous=True) ... passed
+[testing] Running with BF16, without top-k (async=True, previous=True) ... passed
+[testing] Running with BF16, with top-k (async=True, previous=True) ... passed
+[testing] Running with BF16, without top-k (async=True, previous=True) ... passed
+[testing] Running with BF16, with top-k (async=True, previous=True) ... passed
+[testing] Running with FP8, without top-k (async=True, previous=True) ... passed
+[testing] Running with FP8, with top-k (async=True, previous=True) ... passed
+
+[tuning] SMs 24, NVL chunk 4: 6.70 GB/s (NVL), 29.31 us
+[tuning] SMs 24, NVL chunk 6: 7.68 GB/s (NVL), 25.58 us
+[tuning] SMs 24, NVL chunk 8: 7.66 GB/s (NVL), 25.65 us
+[tuning] SMs 24, NVL chunk 10: 7.66 GB/s (NVL), 25.64 us
+[tuning] SMs 24, NVL chunk 12: 7.63 GB/s (NVL), 25.73 us
+[tuning] SMs 24, NVL chunk 14: 7.73 GB/s (NVL), 25.40 us
+[tuning] SMs 24, NVL chunk 16: 7.63 GB/s (NVL), 25.74 us
+[tuning] SMs 24, NVL chunk 18: 7.66 GB/s (NVL), 25.66 us
+[tuning] SMs 24, NVL chunk 20: 7.73 GB/s (NVL), 25.40 us
+[tuning] SMs 24, NVL chunk 22: 7.67 GB/s (NVL), 25.60 us
+[tuning] SMs 24, NVL chunk 24: 7.63 GB/s (NVL), 25.76 us
+[tuning] SMs 24, NVL chunk 26: 7.67 GB/s (NVL), 25.61 us
+[tuning] SMs 24, NVL chunk 28: 7.64 GB/s (NVL), 25.70 us
+[tuning] SMs 24, NVL chunk 30: 7.58 GB/s (NVL), 25.92 us
+[tuning] SMs 24, NVL chunk 32: 7.65 GB/s (NVL), 25.68 us
+[tuning] SMs 24, NVL chunk default: 7.73 GB/s (NVL), 25.41 us
+[tuning] Best dispatch (FP8): SMs 24, NVL chunk 20, 7.73 GB/s (NVL), t: 25.40 us
+
+[tuning] SMs 24, NVL chunk 4: 13.09 GB/s (NVL), 29.11 us
+[tuning] SMs 24, NVL chunk 6: 15.01 GB/s (NVL), 25.38 us
+[tuning] SMs 24, NVL chunk 8: 15.07 GB/s (NVL), 25.27 us
+[tuning] SMs 24, NVL chunk 10: 15.17 GB/s (NVL), 25.11 us
+[tuning] SMs 24, NVL chunk 12: 14.97 GB/s (NVL), 25.44 us
+[tuning] SMs 24, NVL chunk 14: 15.12 GB/s (NVL), 25.20 us
+[tuning] SMs 24, NVL chunk 16: 15.17 GB/s (NVL), 25.11 us
+[tuning] SMs 24, NVL chunk 18: 15.14 GB/s (NVL), 25.15 us
+[tuning] SMs 24, NVL chunk 20: 15.06 GB/s (NVL), 25.30 us
+[tuning] SMs 24, NVL chunk 22: 15.16 GB/s (NVL), 25.12 us
+[tuning] SMs 24, NVL chunk 24: 15.06 GB/s (NVL), 25.29 us
+[tuning] SMs 24, NVL chunk 26: 15.09 GB/s (NVL), 25.25 us
+[tuning] SMs 24, NVL chunk 28: 15.14 GB/s (NVL), 25.16 us
+[tuning] SMs 24, NVL chunk 30: 15.10 GB/s (NVL), 25.23 us
+[tuning] SMs 24, NVL chunk 32: 15.09 GB/s (NVL), 25.24 us
+[tuning] SMs 24, NVL chunk default: 15.16 GB/s (NVL), 25.13 us
+[tuning] Best dispatch (BF16): SMs 24, NVL chunk 10, 15.17 GB/s (NVL), t: 25.11 us
+
+[tuning] SMs 24, NVL chunk 1: 7.67 GB/s (NVL), 49.63 us
+[tuning] SMs 24, NVL chunk 2: 11.11 GB/s (NVL), 34.29 us
+[tuning] SMs 24, NVL chunk 3: 11.72 GB/s (NVL), 32.50 us
+[tuning] SMs 24, NVL chunk 4: 12.48 GB/s (NVL), 30.53 us
+[tuning] SMs 24, NVL chunk 5: 12.49 GB/s (NVL), 30.50 us
+[tuning] SMs 24, NVL chunk 6: 14.52 GB/s (NVL), 26.24 us
+[tuning] SMs 24, NVL chunk 7: 14.43 GB/s (NVL), 26.39 us
+[tuning] SMs 24, NVL chunk 8: 14.50 GB/s (NVL), 26.26 us
+[tuning] SMs 24, NVL chunk 9: 14.18 GB/s (NVL), 26.87 us
+[tuning] SMs 24, NVL chunk 10: 14.32 GB/s (NVL), 26.60 us
+[tuning] SMs 24, NVL chunk 11: 14.39 GB/s (NVL), 26.48 us
+[tuning] SMs 24, NVL chunk 12: 14.34 GB/s (NVL), 26.57 us
+[tuning] SMs 24, NVL chunk 13: 14.39 GB/s (NVL), 26.47 us
+[tuning] SMs 24, NVL chunk 14: 14.30 GB/s (NVL), 26.64 us
+[tuning] SMs 24, NVL chunk 15: 13.35 GB/s (NVL), 28.54 us
+[tuning] SMs 24, NVL chunk 16: 14.33 GB/s (NVL), 26.58 us
+[tuning] SMs 24, NVL chunk default: 14.50 GB/s (NVL), 26.26 us
+[tuning] Best combine: SMs 24, NVL chunk 6: 14.52 GB/s (NVL), t: 26.24 us
+
+
+NCCL version 2.30.7+cuda13.3

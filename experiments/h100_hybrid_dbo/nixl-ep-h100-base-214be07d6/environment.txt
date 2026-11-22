@@ -1,0 +1,71 @@
+2026-11-22T20:41:06Z
+## GDN_Mamba_DBO_Base...origin/GDN_Mamba_DBO_Base
+065e269b793e26a4dcfed4cdd4875651cc725892
+ 214be07d6cb80f4b3dd74c48dd960251bc165bac vllm-v0.33 (v0.34.0-44-g214be07d6)
+## GDN_Mamba_DBO_Base...origin/GDN_Mamba_DBO_Base
+e72c52c78478d2e1ca9e9c57b872114e113ad767
+index, name, compute_cap, driver_version, memory.total [MiB]
+0, NVIDIA H100 80GB HBM3, 9.0, 620.70.06, 81559 MiB
+1, NVIDIA H100 80GB HBM3, 9.0, 620.70.06, 81559 MiB
+	GPU0	GPU1	NIC0	NIC1	NIC2	NIC3	CPU Affinity	NUMA Affinity	GPU NUMA ID
+GPU0	 X 	NV6	NODE	NODE	NODE	NODE	0-15,32-47	0		N/A
+GPU1	NV6	 X 	NODE	NODE	NODE	NODE	0-15,32-47	0		N/A
+NIC0	NODE	NODE	 X 	PIX	NODE	NODE
+NIC1	NODE	NODE	PIX	 X 	NODE	NODE
+NIC2	NODE	NODE	NODE	NODE	 X 	PIX
+NIC3	NODE	NODE	NODE	NODE	PIX	 X
+
+Legend:
+
+  X    = Self
+  SYS  = Connection traversing PCIe as well as the SMP interconnect between NUMA nodes (e.g., QPI/UPI)
+  NODE = Connection traversing PCIe as well as the interconnect between PCIe Host Bridges within a NUMA node
+  PHB  = Connection traversing PCIe as well as a PCIe Host Bridge (typically the CPU)
+  PXB  = Connection traversing multiple PCIe bridges (without traversing the PCIe Host Bridge)
+  PIX  = Connection traversing at most a single PCIe bridge
+  NV#  = Connection traversing a bonded set of # NVLinks
+
+NIC Legend:
+
+  NIC0: mlx5_0
+  NIC1: mlx5_1
+  NIC2: mlx5_2
+  NIC3: mlx5_3
+
+flashinfer-python                        0.7.3
+nixl                                     1.5.2
+nixl-cu13                                1.5.2
+nvidia-nccl-cu13                         2.30.7
+tblib                                    3.2.2
+torch                                    2.14.0+cu130
+triton                                   3.8.0
+vllm                                     0.34.1.dev44+g214be07d6.precompiled /workspace/qwen_vllm_lab/vllm-v0.33
+UCX_TLS=tcp,cuda_copy,cuda_ipc,self
+UCX_NET_DEVICES=lo
+{
+  "models": [
+    {
+      "model": "Intel/Qwen3-Next-80B-A3B-Instruct-int4-AutoRound",
+      "revision": "c1123e9dc2de0a4ef1fef0ef791721bd04d2c202",
+      "path": "/workspace/models/Qwen3-Next-80B-A3B-Instruct-int4-AutoRound",
+      "weight_files": 11,
+      "indexed_shards": 11,
+      "weight_bytes": 43278091008,
+      "total_bytes": 43314699125,
+      "download_seconds": 83.14493155002128,
+      "verify_seconds": 39.96067896200111
+    },
+    {
+      "model": "ibm-granite/granite-4.0-h-tiny",
+      "revision": "791e0d3d28c86e106c9b6e0b4cecdee0375b6124",
+      "path": "/workspace/models/granite-4.0-h-tiny",
+      "weight_files": 3,
+      "indexed_shards": 3,
+      "weight_bytes": 13878142256,
+      "total_bytes": 13888348686,
+      "download_seconds": 34.94021937297657,
+      "verify_seconds": 13.810592336987611
+    }
+  ],
+  "elapsed_seconds": 123.11532613198506
+}

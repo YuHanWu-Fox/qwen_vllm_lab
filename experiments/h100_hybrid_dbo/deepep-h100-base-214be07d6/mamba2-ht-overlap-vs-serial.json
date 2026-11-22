@@ -1,0 +1,509 @@
+{
+  "sample": {
+    "n": 1606,
+    "equal": 1606,
+    "p50": 0.0,
+    "p95": 0.0,
+    "p99": 0.0,
+    "max": 0.0,
+    "over_0.05": 0,
+    "over_0.10": 0,
+    "over_0.25": 0,
+    "over_1.00": 0
+  },
+  "prompt": {
+    "n": 2646,
+    "equal": 2646,
+    "p50": 0.0,
+    "p95": 0.0,
+    "p99": 0.0,
+    "max": 0.0,
+    "over_0.05": 0,
+    "over_0.10": 0,
+    "over_0.25": 0,
+    "over_1.00": 0
+  },
+  "greedy_mismatches": [],
+  "errors": [],
+  "cases": {
+    "both_empty": {
+      "sample": {
+        "n": 0
+      },
+      "prompt": {
+        "n": 0
+      },
+      "mismatches": 0
+    },
+    "cross_prefill": {
+      "sample": {
+        "n": 8,
+        "equal": 8,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "prompt": {
+        "n": 1008,
+        "equal": 1008,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "mismatches": 0
+    },
+    "cross_prefill_forced": {
+      "sample": {
+        "n": 8,
+        "equal": 8,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "prompt": {
+        "n": 0
+      },
+      "mismatches": 0
+    },
+    "cross_prefill_greedy": {
+      "sample": {
+        "n": 8,
+        "equal": 8,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "prompt": {
+        "n": 298,
+        "equal": 298,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "mismatches": 0
+    },
+    "decode_16_16": {
+      "sample": {
+        "n": 128,
+        "equal": 128,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "prompt": {
+        "n": 0
+      },
+      "mismatches": 0
+    },
+    "decode_1_1": {
+      "sample": {
+        "n": 8,
+        "equal": 8,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "prompt": {
+        "n": 0
+      },
+      "mismatches": 0
+    },
+    "decode_2_2": {
+      "sample": {
+        "n": 16,
+        "equal": 16,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "prompt": {
+        "n": 0
+      },
+      "mismatches": 0
+    },
+    "decode_31_32": {
+      "sample": {
+        "n": 252,
+        "equal": 252,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "prompt": {
+        "n": 0
+      },
+      "mismatches": 0
+    },
+    "decode_32_32": {
+      "sample": {
+        "n": 256,
+        "equal": 256,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "prompt": {
+        "n": 0
+      },
+      "mismatches": 0
+    },
+    "decode_3_4": {
+      "sample": {
+        "n": 28,
+        "equal": 28,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "prompt": {
+        "n": 0
+      },
+      "mismatches": 0
+    },
+    "decode_3_8": {
+      "sample": {
+        "n": 44,
+        "equal": 44,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "prompt": {
+        "n": 0
+      },
+      "mismatches": 0
+    },
+    "decode_4_8": {
+      "sample": {
+        "n": 48,
+        "equal": 48,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "prompt": {
+        "n": 0
+      },
+      "mismatches": 0
+    },
+    "decode_4_8_greedy": {
+      "sample": {
+        "n": 48,
+        "equal": 48,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "prompt": {
+        "n": 0
+      },
+      "mismatches": 0
+    },
+    "decode_5_8": {
+      "sample": {
+        "n": 52,
+        "equal": 52,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "prompt": {
+        "n": 0
+      },
+      "mismatches": 0
+    },
+    "decode_7_8": {
+      "sample": {
+        "n": 60,
+        "equal": 60,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "prompt": {
+        "n": 0
+      },
+      "mismatches": 0
+    },
+    "decode_8_8": {
+      "sample": {
+        "n": 64,
+        "equal": 64,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "prompt": {
+        "n": 0
+      },
+      "mismatches": 0
+    },
+    "default_decode_31_32": {
+      "sample": {
+        "n": 252,
+        "equal": 252,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "prompt": {
+        "n": 0
+      },
+      "mismatches": 0
+    },
+    "default_decode_32_32": {
+      "sample": {
+        "n": 256,
+        "equal": 256,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "prompt": {
+        "n": 0
+      },
+      "mismatches": 0
+    },
+    "default_prefill_511_512": {
+      "sample": {
+        "n": 8,
+        "equal": 8,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "prompt": {
+        "n": 0
+      },
+      "mismatches": 0
+    },
+    "default_prefill_512_512": {
+      "sample": {
+        "n": 8,
+        "equal": 8,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "prompt": {
+        "n": 0
+      },
+      "mismatches": 0
+    },
+    "empty_rank0": {
+      "sample": {
+        "n": 4,
+        "equal": 4,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "prompt": {
+        "n": 96,
+        "equal": 96,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "mismatches": 0
+    },
+    "empty_rank1": {
+      "sample": {
+        "n": 4,
+        "equal": 4,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "prompt": {
+        "n": 96,
+        "equal": 96,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "mismatches": 0
+    },
+    "mixed": {
+      "sample": {
+        "n": 38,
+        "equal": 38,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "prompt": {
+        "n": 1000,
+        "equal": 1000,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "mismatches": 0
+    },
+    "prefill_padding_rank0": {
+      "sample": {
+        "n": 8,
+        "equal": 8,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "prompt": {
+        "n": 148,
+        "equal": 148,
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "over_0.05": 0,
+        "over_0.10": 0,
+        "over_0.25": 0,
+        "over_1.00": 0
+      },
+      "mismatches": 0
+    }
+  },
+  "left": "arms/mamba2-ht-none-on",
+  "right": "arms/mamba2-ht-none-on-serial"
+}

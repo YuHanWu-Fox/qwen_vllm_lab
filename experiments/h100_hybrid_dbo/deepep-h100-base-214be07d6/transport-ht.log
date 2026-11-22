@@ -1,0 +1,33 @@
+WARN `--no-project` was provided, but no project was found
+[config] num_tokens=64, hidden=2048, num_topk=10
+[layout] Kernel performance: 0.010 ms
+
+[testing] Running with BF16, without top-k (async=False, previous=False) ...WARNING: destroy() was not called before DeepEP buffer destruction, which can leak resources.
+NCCL version 2.30.7+cuda13.3
+WARNING: destroy() was not called before DeepEP buffer destruction, which can leak resources.
+W1122 19:51:27.036000 55956 torch/multiprocessing/spawn.py:165] Terminating process 55968 via signal SIGTERM
+Traceback (most recent call last):
+  File "/workspace/qwen_vllm_lab_runs/deepep-h100-base-214be07d6/build/DeepEP/tests/legacy/test_intranode.py", line 311, in <module>
+    torch.multiprocessing.spawn(test_loop, args=(num_processes, args), nprocs=num_processes)
+  File "/workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/torch/multiprocessing/spawn.py", line 340, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/torch/multiprocessing/spawn.py", line 296, in start_processes
+    while not context.join():
+              ^^^^^^^^^^^^^^
+  File "/workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/torch/multiprocessing/spawn.py", line 211, in join
+    raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.ProcessRaisedException:
+
+-- Process 1 terminated with the following error:
+Traceback (most recent call last):
+  File "/workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/torch/multiprocessing/spawn.py", line 87, in _wrap
+    fn(i, *args)
+  File "/workspace/qwen_vllm_lab_runs/deepep-h100-base-214be07d6/build/DeepEP/tests/legacy/test_intranode.py", line 285, in test_loop
+    test_main(args, i, local_rank, num_ranks, rank, buffer, group)
+  File "/workspace/qwen_vllm_lab_runs/deepep-h100-base-214be07d6/build/DeepEP/tests/legacy/test_intranode.py", line 114, in test_main
+    recv_x, recv_topk_idx, recv_topk_weights, recv_num_tokens_per_expert_list, handle, event = buffer.dispatch(
+                                                                                               ^^^^^^^^^^^^^^^^
+  File "/workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/deep_ep/buffers/legacy.py", line 397, in dispatch
+    self.runtime.intranode_dispatch(x, x_scales, topk_idx, topk_weights,
+RuntimeError: Assertion exception (/workspace/qwen_vllm_lab_runs/deepep-h100-base-214be07d6/build/DeepEP/csrc/kernels/legacy/intranode.cu:168): num_experts / num_ranks <= kNumThreads and num_ranks <= kNumThreads

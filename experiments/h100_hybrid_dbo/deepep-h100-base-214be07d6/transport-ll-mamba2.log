@@ -1,0 +1,38 @@
+WARN `--no-project` was provided, but no project was found
+Allocating buffer size: 25.55968 MB ...
+/dvs/p4/build/sw/rel/gpgpu/toolkit/r13.0/main_nvshmem/src/host/transport/transport.cpp:nvshmemi_transport_init:282: init failed for transport: IBGDA
+/dvs/p4/build/sw/rel/gpgpu/toolkit/r13.0/main_nvshmem/src/host/transport/transport.cpp:nvshmemi_transport_init:282: init failed for transport: IBGDA
+/workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+NCCL version 2.30.7+cuda13.3
+WARNING: destroy() was not called before DeepEP buffer destruction, which can leak resources.
+/workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: FutureWarning: `torch.distributed.all_gather_into_tensor` is deprecated. Please use `torch.distributed.all_gather_single` instead.
+  return func(*args, **kwargs)
+NCCL version 2.30.7+cuda13.3
+NVSHMEM v3.4.5
+WARNING: destroy() was not called before DeepEP buffer destruction, which can leak resources.
+W1122 19:52:52.999000 59960 torch/multiprocessing/spawn.py:165] Terminating process 60085 via signal SIGTERM
+Traceback (most recent call last):
+  File "/workspace/qwen_vllm_lab_runs/deepep-h100-base-214be07d6/build/DeepEP/tests/legacy/test_low_latency.py", line 332, in <module>
+    torch.multiprocessing.spawn(test_loop, args=(num_processes, args), nprocs=num_processes)
+  File "/workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/torch/multiprocessing/spawn.py", line 340, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/torch/multiprocessing/spawn.py", line 296, in start_processes
+    while not context.join():
+              ^^^^^^^^^^^^^^
+  File "/workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/torch/multiprocessing/spawn.py", line 211, in join
+    raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.ProcessRaisedException:
+
+-- Process 1 terminated with the following error:
+Traceback (most recent call last):
+  File "/workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/torch/multiprocessing/spawn.py", line 87, in _wrap
+    fn(i, *args)
+  File "/workspace/qwen_vllm_lab_runs/deepep-h100-base-214be07d6/build/DeepEP/tests/legacy/test_low_latency.py", line 271, in test_loop
+    test_main(num_tokens,
+  File "/workspace/qwen_vllm_lab_runs/deepep-h100-base-214be07d6/build/DeepEP/tests/legacy/test_low_latency.py", line 100, in test_main
+    buffer.low_latency_dispatch(current_x, topk_idx, num_tokens, num_experts,
+  File "/workspace/qwen_vllm_lab/vllm-v0.33/.venv/lib/python3.12/site-packages/deep_ep/buffers/legacy.py", line 611, in low_latency_dispatch
+    self.runtime.low_latency_dispatch(x, topk_idx,
+RuntimeError: Assertion exception (/workspace/qwen_vllm_lab_runs/deepep-h100-base-214be07d6/build/DeepEP/csrc/kernels/legacy/internode_ll.cu:552): false and "Unsupported hidden"
